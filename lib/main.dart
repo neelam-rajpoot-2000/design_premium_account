@@ -1,3 +1,4 @@
+import 'package:design_premium_account/modules/login_screens/on_boarding_screen.dart';
 import 'package:design_premium_account/modules/login_screens/sign_in_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignIn(),
+      home: OnBoarding(),
     );
   }
 }

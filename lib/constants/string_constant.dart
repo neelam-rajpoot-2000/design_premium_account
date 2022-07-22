@@ -1,7 +1,7 @@
 class StringConstant{
   static const String helloText = 'Hello Again!';
   static const String signInAccountText = 'Sign in to your account';
-  static const String emailText = 'Email Address';
+  static const String emailText = 'Email address';
   static const String profileText = 'profile@gmail.com';
   static const String passwordText = 'Password';
   static const String enterPasswordText = 'Enter your Password';
@@ -12,5 +12,9 @@ class StringConstant{
   static const String signInFacebookText = 'Sign in with Facebook';
   static const String donTText = "Don't have account? Let's";
   static const String signUpText = 'Sign up';
+  static const String whateverText = 'Whatever your hobby,';
+  static const String findText = 'find your Buddee';
+  static const String createAccountText = 'CREATE ACCOUNT';
+
 
 }
