@@ -4,7 +4,8 @@ import 'package:design_premium_account/constants/images_constant.dart';
 import 'package:design_premium_account/constants/string_constant.dart';
 import 'package:design_premium_account/constants/style_constant.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+
+import 'facebook_google.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -25,13 +26,19 @@ class _SignInState extends State<SignIn> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset(
-                  IconConstants.forward,
-                  height: 15.86,
-                  width: 8.89,
-                  fit: BoxFit.contain,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: Image.asset(
+                    IconConstants.backward,
+                    height: 15.86,
+                    width: 8.89,
+                    fit: BoxFit.contain,
+                    color: ColorConstants.bigStoneColor,
+                  ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25.07,
                 ),
                 Center(
@@ -42,7 +49,7 @@ class _SignInState extends State<SignIn> {
                       fontSize: 40,
                       fontWeight: FontWeight.w500),
                 )),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 Center(
@@ -54,7 +61,7 @@ class _SignInState extends State<SignIn> {
                         fontSize: 14),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 34,
                 ),
                 Text(
@@ -64,17 +71,19 @@ class _SignInState extends State<SignIn> {
                       fontSize: 16,
                       fontWeight: FontWeight.w400),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 TextFormField(
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
+                    contentPadding:
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.0),
                       borderSide: BorderSide(
                         width: 1,
-                        color: ColorConstants.alto,
+                        color: ColorConstants.hitGrayColor,
                       ),
                     ),
                     hintText: StringConstant.profileText,
@@ -84,7 +93,7 @@ class _SignInState extends State<SignIn> {
                         fontWeight: FontWeight.w400),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 21,
                 ),
                 Text(
@@ -94,29 +103,30 @@ class _SignInState extends State<SignIn> {
                       fontSize: 16,
                       fontWeight: FontWeight.w400),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 8,
                 ),
                 TextFormField(
                   obscureText: true,
-
                   keyboardType: TextInputType.visiblePassword,
                   decoration: InputDecoration(
+                    contentPadding:
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.0),
                       borderSide: BorderSide(
                         width: 1,
-                        color: ColorConstants.alto,
+                        color: ColorConstants.hitGrayColor,
                       ),
                     ),
                     hintText: StringConstant.enterPasswordText,
-                    hintStyle:AppStyles.regularText(
+                    hintStyle: AppStyles.regularText(
                         color: ColorConstants.alto,
                         fontSize: 16,
                         fontWeight: FontWeight.w400),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 11,
                 ),
                 Row(
@@ -132,14 +142,19 @@ class _SignInState extends State<SignIn> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 24,
                 ),
                 Container(
                     height: 58,
                     width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 14),
+                    padding: const EdgeInsets.symmetric(vertical: 14),
                     decoration: BoxDecoration(
+                        boxShadow: [BoxShadow(
+                          color: ColorConstants.yellowOrangeColor,
+                          blurRadius: 10.0,
+                          offset: const Offset(0.0,  2),
+                        ),],
                         gradient: LinearGradient(colors: [
                           ColorConstants.sunshadeColor,
                           ColorConstants.orangeColor,
@@ -151,7 +166,7 @@ class _SignInState extends State<SignIn> {
                             fontSize: 20,
                             color: ColorConstants.whiteColor,
                             fontWeight: FontWeight.w600))),
-                SizedBox(
+                const SizedBox(
                   height: 29,
                 ),
                 Row(
@@ -161,7 +176,7 @@ class _SignInState extends State<SignIn> {
                       width: 130,
                       color: ColorConstants.dustyGrayColor,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 14,
                     ),
                     Text(StringConstant.orWithText,
@@ -169,7 +184,7 @@ class _SignInState extends State<SignIn> {
                             fontSize: 12,
                             color: ColorConstants.dustyGrayColor,
                             fontWeight: FontWeight.w500)),
-                    SizedBox(
+                    const SizedBox(
                       width: 14,
                     ),
                     Image.asset(
@@ -179,69 +194,90 @@ class _SignInState extends State<SignIn> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 24,
                 ),
-                Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 14),
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                            color: ColorConstants.bigStoneColor, width: 2),
-                        borderRadius: BorderRadius.circular(40)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          ImageConstants.google,
-                          width: 25,
-                          height: 25,
-                          fit: BoxFit.cover,
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(StringConstant.signInGoggleText,
-                            style: AppStyles.semiBoldText(
-                                fontSize: 16,
-                                color: ColorConstants.bigStoneColor,
-                                fontWeight: FontWeight.w500)),
-                      ],
-                    )),
-                SizedBox(
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const WebViewScreen(
+                              url:
+                              'https://accounts.google.com/AddSession/signinchooser?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue%26pli%3D1&ec=GAlAwAE&flowName=GlifWebSignIn&flowEntry=AddSession',
+                            )));
+                  },
+                  child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: ColorConstants.bigStoneColor, width: 2),
+                          borderRadius: BorderRadius.circular(40)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            ImageConstants.google,
+                            width: 25,
+                            height: 25,
+                            fit: BoxFit.cover,
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          Text(StringConstant.signInGoggleText,
+                              style: AppStyles.semiBoldText(
+                                  fontSize: 16,
+                                  color: ColorConstants.bigStoneColor,
+                                  fontWeight: FontWeight.w500)),
+                        ],
+                      )),
+                ),
+                const SizedBox(
                   height: 16,
                 ),
-                Container(
-                    width: double.infinity,
-                    padding: EdgeInsets.symmetric(vertical: 14),
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                            color: ColorConstants.bigStoneColor, width: 2),
-                        borderRadius: BorderRadius.circular(40)),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          ImageConstants.facebook,
-                          width: 25,
-                          height: 25,
-                          fit: BoxFit.cover,
-                        ),
-                        SizedBox(
-                          width: 8,
-                        ),
-                        Text(StringConstant.signInFacebookText,
-                            style: AppStyles.semiBoldText(
-                                fontSize: 16,
-                                color: ColorConstants.bigStoneColor,
-                                fontWeight: FontWeight.w500)),
-                      ],
-                    )),
-                SizedBox(
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const WebViewScreen(
+                              url: 'https://www.facebook.com/',
+                            )));
+                  },
+                  child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: ColorConstants.bigStoneColor, width: 2),
+                          borderRadius: BorderRadius.circular(40)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            ImageConstants.facebook,
+                            width: 25,
+                            height: 25,
+                            fit: BoxFit.cover,
+                          ),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          Text(StringConstant.signInFacebookText,
+                              style: AppStyles.semiBoldText(
+                                  fontSize: 16,
+                                  color: ColorConstants.bigStoneColor,
+                                  fontWeight: FontWeight.w500)),
+                        ],
+                      )),
+                ),
+                const SizedBox(
                   height: 32,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center ,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       StringConstant.donTText,
@@ -250,11 +286,17 @@ class _SignInState extends State<SignIn> {
                           fontWeight: FontWeight.w400,
                           fontSize: 12),
                     ),
-                    SizedBox(width: 4,),
-                    Text(StringConstant.signUpText, style: AppStyles.regularText(
-                        color: ColorConstants.malibuColor,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 12,isUnderline: true),)
+                    const SizedBox(
+                      width: 4,
+                    ),
+                    Text(
+                      StringConstant.signUpText,
+                      style: AppStyles.regularText(
+                          color: ColorConstants.malibuColor,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
+                          isUnderline: true),
+                    )
                   ],
                 )
               ],

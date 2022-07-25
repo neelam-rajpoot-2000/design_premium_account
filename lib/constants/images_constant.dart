@@ -5,4 +5,8 @@ class ImageConstants{
   static const google = '$base/google.svg';
   static const background = '$base/img.png';
   static const bubbee = '$base/bubble.png';
+  static const background1 = '$base/background.png';
+  static const man = '$base/man.png';
+
+
 }

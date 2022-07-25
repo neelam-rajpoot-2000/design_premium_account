@@ -2,9 +2,9 @@ import 'package:design_premium_account/constants/colors_constant.dart';
 import 'package:design_premium_account/constants/images_constant.dart';
 import 'package:design_premium_account/constants/string_constant.dart';
 import 'package:design_premium_account/constants/style_constant.dart';
-import 'package:design_premium_account/modules/login_screens/sign_in_screen.dart';
+import 'package:design_premium_account/modules/login_screens/sign_in/sign_in_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import '../sign_up_about/sign_up_about_screen.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({Key? key}) : super(key: key);
@@ -30,7 +30,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   width: double.infinity,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 53,
               ),
               Text(
@@ -39,41 +39,57 @@ class _OnBoardingState extends State<OnBoarding> {
                   color: ColorConstants.balticSeaColor,
                   fontSize: 20,
                   fontWeight: FontWeight.w500,
+                  letterSpacing: 0.6
                 ),
               ),
+              const SizedBox(height: 3,),
               Text(
                 StringConstant.findText,
                 style: AppStyles.semiBoldText(
                   color: ColorConstants.balticSeaColor,
                   fontSize: 20,
                   fontWeight: FontWeight.w500,
+                  letterSpacing: 0.6
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 29,
               ),
-              Container(
-                  padding: EdgeInsets.symmetric(vertical: 17, horizontal: 80),
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(colors: [
-                        ColorConstants.sunshadeColor,
-                        ColorConstants.orangeColor,
-                      ]),
-                      borderRadius: BorderRadius.circular(40)),
-                  child: Text(StringConstant.createAccountText,
-                      textAlign: TextAlign.center,
-                      style: AppStyles.boldText(
-                          fontSize: 20,
-                          color: ColorConstants.whiteColor,
-                          fontWeight: FontWeight.w600))),
-              SizedBox(
+              GestureDetector(
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const SignIn()),
+                  );
+                },
+                child: Container(
+                    padding: const EdgeInsets.symmetric(vertical: 17, horizontal: 80),
+                    decoration: BoxDecoration(
+                        boxShadow: [BoxShadow(
+                          color: ColorConstants.yellowOrangeColor,
+                          blurRadius: 10.0,
+                            offset: const Offset(0.0, 2),
+                        ),],
+                        gradient: LinearGradient(colors: [
+                          ColorConstants.sunshadeColor,
+                          ColorConstants.orangeColor,
+                        ]),
+                        borderRadius: BorderRadius.circular(40)),
+                    child: Text(StringConstant.createAccountText,
+                        textAlign: TextAlign.center,
+                        style: AppStyles.boldText(
+                            fontSize: 20,
+                            color: ColorConstants.whiteColor,
+                            fontWeight: FontWeight.w600))),
+              ),
+              const SizedBox(
                 height: 25,
               ),
               InkWell(
                 onTap: (){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const SignIn()),
+                    MaterialPageRoute(builder: (context) => const SignUpAbout()),
                   );
                 },
                 child: Text(

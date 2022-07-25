@@ -11,4 +11,11 @@ class ColorConstants{
   static Color malibuColor =Color(0xFF5EE6FF);
   static Color balticSeaColor =Color(0xFF302F34);
   static Color bayOfManyColor =Color(0xFF284A7E);
+  static Color mineShaftColor =Color(0xFF222222);
+  static Color malibu2Color =Color(0xFF58E5FF);
+  static Color anakiwaColor = Color(0xFF91EEFF);
+  static Color yellowOrangeColor = Color(0xFFFFA54A);
+  static Color hitGrayColor = Color(0xFFAAB2B7);
+  static Color DustyGrayColor= Color(0xFF999999);
+  static Color HH = Color(0xFF94BDFF);
 }

@@ -9,7 +9,9 @@ class AppStyles {
     bool isUnderline = false,
     double? fontSize,
     FontWeight? fontWeight,
-    String? fontFamily
+    String? fontFamily,
+    double? wordSpacing,
+    double? letterSpacing,
   }) {
     return TextStyle(
       fontFamily: fontFamily ?? fontConstants.bold,
@@ -17,6 +19,8 @@ class AppStyles {
       fontWeight: fontWeight ?? FontWeight.w500,
       color: color ?? ColorConstants.whiteColor,
       height: height,
+      wordSpacing: wordSpacing,
+      letterSpacing: letterSpacing ,
       decoration: isUnderline ? TextDecoration.underline : TextDecoration.none,
     );
   }
@@ -27,7 +31,9 @@ class AppStyles {
     bool isUnderline = false,
     double? fontSize,
     FontWeight? fontWeight,
-    String? fontFamily
+    String? fontFamily,
+    double? wordSpacing,
+    double? letterSpacing,
   }) {
     return TextStyle(
       fontFamily: fontFamily ?? fontConstants.semiBold,
@@ -35,6 +41,8 @@ class AppStyles {
       fontWeight: fontWeight ?? FontWeight.w300,
       color: color ?? ColorConstants.whiteColor,
       height: height,
+      wordSpacing: wordSpacing,
+      letterSpacing: letterSpacing ,
       decoration: isUnderline ? TextDecoration.underline : TextDecoration.none,
     );
   }
@@ -45,7 +53,9 @@ class AppStyles {
     bool isUnderline = false,
     double? fontSize,
     FontWeight? fontWeight,
-    String? fontFamily
+    String? fontFamily,
+    double? wordSpacing,
+    double? letterSpacing,
   }) {
     return TextStyle(
       fontFamily: fontFamily ?? fontConstants.bold,
@@ -53,6 +63,8 @@ class AppStyles {
       fontWeight: fontWeight ?? FontWeight.w300,
       color: color ?? ColorConstants.whiteColor,
       height: height,
+      wordSpacing: wordSpacing,
+      letterSpacing: letterSpacing ,
       decoration: isUnderline ? TextDecoration.underline : TextDecoration.none,
     );
   }
