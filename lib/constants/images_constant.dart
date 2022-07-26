@@ -7,6 +7,8 @@ class ImageConstants{
   static const bubbee = '$base/bubble.png';
   static const background1 = '$base/background.png';
   static const man = '$base/man.png';
+  static const man1 = '$base/man1.png';
+  static const image = '$base/image.png';
 
 
 }

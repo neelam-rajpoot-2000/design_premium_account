@@ -3,6 +3,10 @@ import 'package:design_premium_account/modules/login_screens/sign_in/sign_in_scr
 import 'package:design_premium_account/modules/profile/privacy_policy.dart';
 import 'package:flutter/material.dart';
 
+import 'modules/login_screens/add_hobbies/add_hobbies4_screen.dart';
+import 'modules/login_screens/add_hobbies/add_hobbies5_screen.dart';
+import 'modules/login_screens/add_hobbies/add_hobbies6_screen.dart';
+import 'modules/login_screens/add_hobbies/add_hobbies7_screen.dart';
 import 'modules/login_screens/add_hobbies/add_hobbies_screen.dart';
 import 'modules/login_screens/sign_up_about/sign_up_about_screen.dart';
 import 'modules/profile/profile.dart';

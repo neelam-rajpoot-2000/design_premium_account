@@ -59,5 +59,17 @@ class StringConstant{
   static const String tennisText = 'Tennis';
   static const String trainspottingText = 'Trainspotting';
   static const String yogaText = 'Yoga';
+  static const String lookingForText = 'Looking for...';
+  static const String someInfoText = "Some info about your hobby and what you're looking for";
+  static const String saveText = 'SAVE';
+  static const String youHaveOneHobbyText = 'You have 1 hobby';
+  static const String addNewHobbyText = '+ ADD NEW HOBBY';
+  static const String iTookText = 'I took up surfing over lockdown, I love getting out of the city. Beginner level and looking for a friend to join me!';
+  static const String youHaveText = 'You have chosen two hobby';
+  static const String youHaveThreeHobbyText = 'You have three hobby';
+  static const String  iLoveText = 'I love landscape/city photography. Would be great to meet someone to explore London and shoot together.';
+  static const String addPhotosText = 'Add photos';
+
+
 
 }

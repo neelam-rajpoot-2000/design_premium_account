@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../constants/colors_constant.dart';
 import '../../../constants/icons_constant.dart';
+import 'add_hobbies2_screen.dart';
 
 class AddHobbies extends StatefulWidget {
   const AddHobbies({Key? key}) : super(key: key);
@@ -75,6 +76,10 @@ class _AddHobbiesState extends State<AddHobbies> {
       'title': StringConstant.yogaText,
     },
   ];
+
+  final List item2 =[
+  ];
+
   int _selectedIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
@@ -100,7 +105,7 @@ class _AddHobbiesState extends State<AddHobbies> {
                 height: 15.86,
                 width: 8.89,
                 fit: BoxFit.contain,
-                color: ColorConstants.bigStoneColor,
+                color: ColorConstants.mineShaftColor,
               ),
             ),
             const SizedBox(
@@ -159,6 +164,7 @@ class _AddHobbiesState extends State<AddHobbies> {
                   childAspectRatio: 3,
                   children: List.generate(item.length, (index) {
                     return _buildCardViewWidget(
+                      index: index,
                       title: item[index]['title'],
                     );
                   }),
@@ -213,28 +219,44 @@ class _AddHobbiesState extends State<AddHobbies> {
   }
 
   _buildCardViewWidget({
+    required int index,
     required String title,
   }) {
-    return Column(
-      children: [
-        Container(
-          padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 9),
-          height: 35,
-          width: 152,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(
-                color: ColorConstants.bigStoneColor,
-              )),
-          child: Text(
-            title,
-            style: AppStyles.regularText(
-                color: ColorConstants.bigStoneColor,
-                fontSize: 16,
-                fontWeight: FontWeight.w600),
+    return InkWell(
+      onTap: index == 2
+          ? () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AddHobbies2()),
+              );
+            }
+          : () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AddHobbies()),
+              );
+            },
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 9),
+            height: 35,
+            width: 152,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(
+                  color: ColorConstants.bigStoneColor,
+                )),
+            child: Text(
+              title,
+              style: AppStyles.regularText(
+                  color: ColorConstants.bigStoneColor,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
