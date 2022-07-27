@@ -1,6 +1,7 @@
 import 'package:design_premium_account/constants/string_constant.dart';
 import 'package:design_premium_account/constants/style_constant.dart';
 import 'package:flutter/material.dart';
+import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 
 import '../../../constants/colors_constant.dart';
 import '../../../constants/icons_constant.dart';
@@ -14,6 +15,15 @@ class AddHobbies extends StatefulWidget {
 }
 
 class _AddHobbiesState extends State<AddHobbies> {
+  final List _searchHistory = [];
+  bool isSearchEnable = false;
+  final TextEditingController _txtController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   final List item = [
     {
       'title': StringConstant.astronomyText,
@@ -77,9 +87,6 @@ class _AddHobbiesState extends State<AddHobbies> {
     },
   ];
 
-  final List item2 =[
-  ];
-
   int _selectedIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
@@ -133,6 +140,7 @@ class _AddHobbiesState extends State<AddHobbies> {
               height: 8,
             ),
             TextFormField(
+              controller: _txtController,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.search_outlined,
@@ -152,6 +160,29 @@ class _AddHobbiesState extends State<AddHobbies> {
                     fontSize: 16,
                     fontWeight: FontWeight.w400),
               ),
+              onTap: () {
+                if(_txtController.text.isEmpty){
+                  setState(() {
+                    isSearchEnable = true;
+                  });
+                }
+              },
+              onChanged: (value){
+                print("valueCheck ${value.length}");
+                if(value.isEmpty){
+                  _searchHistory.clear();
+                  setState(() {
+                  });
+                }
+              },
+              onFieldSubmitted: (value){
+                _searchHistory.clear();
+                item.forEach((pc) {
+                  if (pc['title'].contains(value)) _searchHistory.add(pc);
+                });
+                setState(() {
+                });
+              },
             ),
             const SizedBox(
               height: 40,
@@ -159,15 +190,20 @@ class _AddHobbiesState extends State<AddHobbies> {
             Expanded(
               child: SizedBox(
                 height: double.infinity,
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  childAspectRatio: 3,
-                  children: List.generate(item.length, (index) {
+                child: GridView.builder(
+                  itemCount:
+                      isSearchEnable ? _searchHistory.length : item.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 3,
+                  ),
+                  itemBuilder: (BuildContext context, int index) {
+                    List tempList = isSearchEnable ? _searchHistory : item;
                     return _buildCardViewWidget(
                       index: index,
-                      title: item[index]['title'],
+                      title: tempList[index]['title'],
                     );
-                  }),
+                  },
                 ),
               ),
             ),
@@ -260,3 +296,4 @@ class _AddHobbiesState extends State<AddHobbies> {
     );
   }
 }
+
