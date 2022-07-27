@@ -69,6 +69,9 @@ class StringConstant{
   static const String youHaveThreeHobbyText = 'You have three hobby';
   static const String  iLoveText = 'I love landscape/city photography. Would be great to meet someone to explore London and shoot together.';
   static const String addPhotosText = 'Add photos';
+  static const String youCanSetText = 'You can set this photo as the main one';
+  static const String mainPhotoText = 'Main photo';
+  static const String deleteText = 'Delete';
 
 
 

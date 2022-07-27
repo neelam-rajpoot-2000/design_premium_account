@@ -15,5 +15,6 @@ class IconConstants{
   static const circleWithClose = '$base/circle_with_close.png';
   static const pen = '$base/pen.png';
   static const add = '$base/add.png';
+  static const right = '$base/right.png';
 
 }

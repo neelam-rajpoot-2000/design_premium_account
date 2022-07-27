@@ -4,6 +4,7 @@ import '../../../constants/colors_constant.dart';
 import '../../../constants/icons_constant.dart';
 import '../../../constants/string_constant.dart';
 import '../../../constants/style_constant.dart';
+import 'add_hobbies7_screen.dart';
 
 class AddHobbies6 extends StatefulWidget {
   const AddHobbies6({Key? key}) : super(key: key);
@@ -81,20 +82,28 @@ class _AddHobbies6State extends State<AddHobbies6> {
               ),
             ),
             const Spacer(),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.symmetric(vertical: 17),
-              decoration: BoxDecoration(
-                  border:
-                      Border.all(color: ColorConstants.orangeColor, width: 2),
-                  borderRadius: BorderRadius.circular(40)),
-              child: Text(
-                StringConstant.nextStepText,
-                textAlign: TextAlign.center,
-                style: AppStyles.boldText(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
-                    color: ColorConstants.orangeColor),
+            InkWell(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const AddHobbies7()),
+                );
+              },
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(vertical: 17),
+                decoration: BoxDecoration(
+                    border:
+                        Border.all(color: ColorConstants.orangeColor, width: 2),
+                    borderRadius: BorderRadius.circular(40)),
+                child: Text(
+                  StringConstant.nextStepText,
+                  textAlign: TextAlign.center,
+                  style: AppStyles.boldText(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16,
+                      color: ColorConstants.orangeColor),
+                ),
               ),
             ),
           ],
