@@ -72,7 +72,18 @@ class StringConstant{
   static const String youCanSetText = 'You can set this photo as the main one';
   static const String mainPhotoText = 'Main photo';
   static const String deleteText = 'Delete';
-
+  static const String logOutText = 'LOG OUT';
+  static const String myHobbiesText = 'My hobbies';
+  static const String searchSettingsText = 'Search Settings';
+  static const String bothText = 'Both';
+  static const String distanceText = 'Distance';
+  static const String kmText = '35km';
+  static const String thirtyFiveText = '35';
+  static const String maxText = 'Max';
+  static const String ageText = 'Age';
+  static const String fromText = 'From';
+  static const String toText = 'To';
+  static const String applyText = 'Apply';
 
 
 }

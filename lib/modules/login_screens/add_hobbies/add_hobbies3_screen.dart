@@ -54,7 +54,7 @@ class _AddHobbies3State extends State<AddHobbies3> {
                   color: ColorConstants.bigStoneColor),
             )),
             const SizedBox(
-              height: 32,
+              height: 36,
             ),
             Center(
                 child: Text(

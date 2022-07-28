@@ -18,4 +18,5 @@ class ColorConstants{
   static Color hitGrayColor = Color(0xFFAAB2B7);
   static Color DustyGrayColor= Color(0xFF999999);
   static Color persimmonColor = Color(0xFFFF5858);
+  static Color blackColor =Color(0xFF000000);
 }

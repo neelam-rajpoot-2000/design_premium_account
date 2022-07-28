@@ -115,10 +115,6 @@ class _SignUpAboutState extends State<SignUpAbout> {
                   ),
                 ),
                 hintText: StringConstant.dateOfDateText,
-                // prefixIcon: new Icon(
-                //   Icons.date_range_outlined,
-                //   color: ColorConstants.whiteColor,
-                // ),
                 hintStyle: TextStyle(
                     color: ColorConstants.bigStoneColor,
                     fontSize: 16,

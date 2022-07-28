@@ -10,10 +10,11 @@ import '../modules/login_screens/add_hobbies/add_hobbies_screen.dart';
 import '../modules/login_screens/sign_in/facebook_google.dart';
 import '../modules/login_screens/sign_in/sign_in_screen.dart';
 import '../modules/login_screens/sign_up_about/sign_up_about_screen.dart';
+import '../modules/profile/add_hobbies_profile/add_hobbies_profile_screen.dart';
+import '../modules/profile/information/information_screen.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
-
     switch (settings.name) {
       case '/signIn':
         return MaterialPageRoute(builder: (_) => const SignIn());
@@ -55,11 +56,22 @@ class RouteGenerator {
         );
       case '/webViewScreen':
         return MaterialPageRoute(
-          builder: (_) => const WebViewScreen(url: 'https://accounts.google.com/AddSession/signinchooser?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue%26pli%3D1&ec=GAlAwAE&flowName=GlifWebSignIn&flowEntry=AddSession',),
+          builder: (_) => const WebViewScreen(
+            url:
+                'https://accounts.google.com/AddSession/signinchooser?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue%26pli%3D1&ec=GAlAwAE&flowName=GlifWebSignIn&flowEntry=AddSession',
+          ),
         );
       case '/webViewScreen2':
         return MaterialPageRoute(
           builder: (_) => const WebViewScreen(url: 'https://www.facebook.com/'),
+        );
+      case '/information':
+        return MaterialPageRoute(
+          builder: (_) => const Information(),
+        );
+      case '/addHobbiesProfile':
+        return MaterialPageRoute(
+          builder: (_) => const AddHobbiesProfile(),
         );
 
       default:
