@@ -1,10 +1,10 @@
 import 'package:design_premium_account/constants/colors_constant.dart';
 import 'package:design_premium_account/constants/string_constant.dart';
 import 'package:design_premium_account/constants/style_constant.dart';
+import 'package:design_premium_account/routes/route_generator.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants/icons_constant.dart';
-import '../add_hobbies/add_hobbies_screen.dart';
 
 class SignUpAbout extends StatefulWidget {
   const SignUpAbout({Key? key}) : super(key: key);
@@ -212,7 +212,7 @@ class _SignUpAboutState extends State<SignUpAbout> {
             const Spacer(),
             InkWell(
               onTap: (){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const AddHobbies()));
+                Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/addHobbies')));
               },
               child: Container(
                 width: double.infinity,

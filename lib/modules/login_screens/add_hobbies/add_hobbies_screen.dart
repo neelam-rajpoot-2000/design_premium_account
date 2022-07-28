@@ -1,11 +1,11 @@
 import 'package:design_premium_account/constants/string_constant.dart';
 import 'package:design_premium_account/constants/style_constant.dart';
 import 'package:flutter/material.dart';
-import 'package:material_floating_search_bar/material_floating_search_bar.dart';
 
 import '../../../constants/colors_constant.dart';
 import '../../../constants/icons_constant.dart';
-import 'add_hobbies2_screen.dart';
+import '../../../routes/route_generator.dart';
+
 
 class AddHobbies extends StatefulWidget {
   const AddHobbies({Key? key}) : super(key: key);
@@ -261,16 +261,10 @@ class _AddHobbiesState extends State<AddHobbies> {
     return InkWell(
       onTap: index == 2
           ? () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const AddHobbies2()),
-              );
+        Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/addHobbies2')));
             }
           : () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const AddHobbies()),
-              );
+        Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/addHobbies')));
             },
       child: Column(
         children: [

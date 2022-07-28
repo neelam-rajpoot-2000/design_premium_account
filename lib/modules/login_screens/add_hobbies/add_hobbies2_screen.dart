@@ -4,7 +4,7 @@ import '../../../constants/colors_constant.dart';
 import '../../../constants/icons_constant.dart';
 import '../../../constants/string_constant.dart';
 import '../../../constants/style_constant.dart';
-import 'add_hobbies3_screen.dart';
+import '../../../routes/route_generator.dart';
 
 class AddHobbies2 extends StatefulWidget {
   const AddHobbies2({Key? key}) : super(key: key);
@@ -155,10 +155,7 @@ class _AddHobbies2State extends State<AddHobbies2> {
             const Spacer(),
             InkWell(
               onTap: (){
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const AddHobbies3()),
-                );
+                Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/addHobbies3')));
               },
               child: Container(
                   height: 58,

@@ -5,7 +5,7 @@ import 'package:design_premium_account/constants/string_constant.dart';
 import 'package:design_premium_account/constants/style_constant.dart';
 import 'package:flutter/material.dart';
 
-import 'facebook_google.dart';
+import '../../../routes/route_generator.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -199,13 +199,7 @@ class _SignInState extends State<SignIn> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const WebViewScreen(
-                              url:
-                              'https://accounts.google.com/AddSession/signinchooser?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue%26pli%3D1&ec=GAlAwAE&flowName=GlifWebSignIn&flowEntry=AddSession',
-                            )));
+                    Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/webViewScreen')));
                   },
                   child: Container(
                       width: double.infinity,
@@ -239,12 +233,7 @@ class _SignInState extends State<SignIn> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const WebViewScreen(
-                              url: 'https://www.facebook.com/',
-                            )));
+                    Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/webViewScreen2')));
                   },
                   child: Container(
                       width: double.infinity,

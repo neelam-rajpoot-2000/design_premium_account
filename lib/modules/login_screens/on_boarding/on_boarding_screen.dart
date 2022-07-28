@@ -2,9 +2,8 @@ import 'package:design_premium_account/constants/colors_constant.dart';
 import 'package:design_premium_account/constants/images_constant.dart';
 import 'package:design_premium_account/constants/string_constant.dart';
 import 'package:design_premium_account/constants/style_constant.dart';
-import 'package:design_premium_account/modules/login_screens/sign_in/sign_in_screen.dart';
 import 'package:flutter/material.dart';
-import '../sign_up_about/sign_up_about_screen.dart';
+import '../../../routes/route_generator.dart';
 
 class OnBoarding extends StatefulWidget {
   const OnBoarding({Key? key}) : super(key: key);
@@ -36,40 +35,43 @@ class _OnBoardingState extends State<OnBoarding> {
               Text(
                 StringConstant.whateverText,
                 style: AppStyles.semiBoldText(
-                  color: ColorConstants.balticSeaColor,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: 0.6
-                ),
+                    color: ColorConstants.balticSeaColor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 0.6),
               ),
-              const SizedBox(height: 3,),
+              const SizedBox(
+                height: 3,
+              ),
               Text(
                 StringConstant.findText,
                 style: AppStyles.semiBoldText(
-                  color: ColorConstants.balticSeaColor,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: 0.6
-                ),
+                    color: ColorConstants.balticSeaColor,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                    letterSpacing: 0.6),
               ),
               const SizedBox(
                 height: 29,
               ),
               GestureDetector(
-                onTap: (){
+                onTap: () {
                   Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const SignIn()),
-                  );
+                      RouteGenerator.generateRoute(
+                          const RouteSettings(name: '/signIn')));
                 },
                 child: Container(
-                    padding: const EdgeInsets.symmetric(vertical: 17, horizontal: 80),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 17, horizontal: 80),
                     decoration: BoxDecoration(
-                        boxShadow: [BoxShadow(
-                          color: ColorConstants.yellowOrangeColor,
-                          blurRadius: 10.0,
+                        boxShadow: [
+                          BoxShadow(
+                            color: ColorConstants.yellowOrangeColor,
+                            blurRadius: 10.0,
                             offset: const Offset(0.0, 2),
-                        ),],
+                          ),
+                        ],
                         gradient: LinearGradient(colors: [
                           ColorConstants.sunshadeColor,
                           ColorConstants.orangeColor,
@@ -86,11 +88,8 @@ class _OnBoardingState extends State<OnBoarding> {
                 height: 25,
               ),
               InkWell(
-                onTap: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const SignUpAbout()),
-                  );
+                onTap: () {
+                 Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/signUpAbout')));
                 },
                 child: Text(
                   StringConstant.signInText,
