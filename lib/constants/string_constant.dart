@@ -84,6 +84,12 @@ class StringConstant{
   static const String fromText = 'From';
   static const String toText = 'To';
   static const String applyText = 'Apply';
+  static const String Text = '21 - 37';
+  static const String editHobbiesText ='Edit hobbies';
+  static const String letText = "Let's discuss";
+  static const String addDescriptionText = 'Add description';
+  static const String galleryText = 'Gallery';
+
 
 
 }

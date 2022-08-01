@@ -16,5 +16,6 @@ class IconConstants{
   static const pen = '$base/pen.png';
   static const add = '$base/add.png';
   static const right = '$base/right.png';
+  static const star = '$base/star.png';
 
 }

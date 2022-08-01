@@ -7,14 +7,14 @@ import '../../../constants/string_constant.dart';
 import '../../../constants/style_constant.dart';
 import '../../../routes/route_generator.dart';
 
-class AddHobbies7 extends StatefulWidget {
-  const AddHobbies7({Key? key}) : super(key: key);
+class AddHobbiesAddPhoto extends StatefulWidget {
+  const AddHobbiesAddPhoto({Key? key}) : super(key: key);
 
   @override
-  State<AddHobbies7> createState() => _AddHobbies7State();
+  State<AddHobbiesAddPhoto> createState() => _AddHobbiesAddPhotoState();
 }
 
-class _AddHobbies7State extends State<AddHobbies7> {
+class _AddHobbiesAddPhotoState extends State<AddHobbiesAddPhoto> {
   int _selectedIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
@@ -108,12 +108,12 @@ class _AddHobbies7State extends State<AddHobbies7> {
               const Spacer(),
               InkWell(
                 onTap: (){
-                  Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/addHobbies8')));
+                  Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/addHobbiesAddPhotoAndDelete')));
                 },
                 child: Container(
-                    height: 58,
                     width: double.infinity,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    padding: const EdgeInsets.symmetric(vertical: 17),
+                    margin: EdgeInsets.symmetric(horizontal: 10),
                     decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(

@@ -6,20 +6,21 @@ import '../../../constants/string_constant.dart';
 import '../../../constants/style_constant.dart';
 import '../../../routes/route_generator.dart';
 
-class AddHobbies4 extends StatefulWidget {
-  const AddHobbies4({Key? key}) : super(key: key);
+class AddHobbiesSurfing extends StatefulWidget {
+  const AddHobbiesSurfing({Key? key}) : super(key: key);
 
   @override
-  State<AddHobbies4> createState() => _AddHobbies4State();
+  State<AddHobbiesSurfing> createState() => _AddHobbiesSurfingState();
 }
 
-class _AddHobbies4State extends State<AddHobbies4> {
+class _AddHobbiesSurfingState extends State<AddHobbiesSurfing> {
   int _selectedIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,8 +73,8 @@ class _AddHobbies4State extends State<AddHobbies4> {
                   decoration: InputDecoration(
                     prefixIcon: Icon(Icons.search_outlined,
                         color: ColorConstants.dustyGrayColor, size: 30),
-                    contentPadding:
-                        const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
+                    contentPadding: const EdgeInsets.symmetric(
+                        vertical: 15, horizontal: 25),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.0),
                       borderSide: BorderSide(
@@ -96,8 +97,8 @@ class _AddHobbies4State extends State<AddHobbies4> {
                     Container(
                       height: 32,
                       width: 152,
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         gradient: LinearGradient(colors: [
@@ -179,8 +180,8 @@ class _AddHobbies4State extends State<AddHobbies4> {
                     Container(
                       height: 32,
                       width: 152,
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         gradient: LinearGradient(colors: [
@@ -202,8 +203,8 @@ class _AddHobbies4State extends State<AddHobbies4> {
                     Container(
                       height: 32,
                       width: 152,
-                      padding:
-                          const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
                         gradient: LinearGradient(colors: [
@@ -221,10 +222,15 @@ class _AddHobbies4State extends State<AddHobbies4> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 90,),
+                const SizedBox(
+                  height: 90,
+                ),
                 InkWell(
-                  onTap: (){
-                    Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/addHobbies5')));
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        RouteGenerator.generateRoute(
+                            const RouteSettings(name: '/addHobbiesBadmintonPhotographySurfing')));
                   },
                   child: Container(
                       height: 58,

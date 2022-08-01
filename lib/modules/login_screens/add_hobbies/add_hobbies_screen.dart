@@ -261,7 +261,7 @@ class _AddHobbiesState extends State<AddHobbies> {
     return InkWell(
       onTap: index == 2
           ? () {
-        Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/addHobbies2')));
+        Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/addHobbiesBadminton')));
             }
           : () {
         Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/addHobbies')));

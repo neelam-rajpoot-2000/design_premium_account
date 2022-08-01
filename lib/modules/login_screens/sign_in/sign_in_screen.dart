@@ -278,13 +278,21 @@ class _SignInState extends State<SignIn> {
                     const SizedBox(
                       width: 4,
                     ),
-                    Text(
-                      StringConstant.signUpText,
-                      style: AppStyles.regularText(
-                          color: ColorConstants.malibuColor,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                          isUnderline: true),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            RouteGenerator.generateRoute(
+                                const RouteSettings(name: '/signUpAbout')));
+                      },
+                      child: Text(
+                        StringConstant.signUpText,
+                        style: AppStyles.regularText(
+                            color: ColorConstants.malibuColor,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 12,
+                            isUnderline: true),
+                      ),
                     )
                   ],
                 )

@@ -59,7 +59,7 @@ class _OnBoardingState extends State<OnBoarding> {
                   Navigator.push(
                       context,
                       RouteGenerator.generateRoute(
-                          const RouteSettings(name: '/signIn')));
+                          const RouteSettings(name: '/signUpAbout')));
                 },
                 child: Container(
                     padding: const EdgeInsets.symmetric(
@@ -89,7 +89,7 @@ class _OnBoardingState extends State<OnBoarding> {
               ),
               InkWell(
                 onTap: () {
-                 Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/signUpAbout')));
+                 Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/signIn')));
                 },
                 child: Text(
                   StringConstant.signInText,

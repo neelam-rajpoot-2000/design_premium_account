@@ -30,11 +30,16 @@ class _PrivancyPolicyState extends State<PrivancyPolicy> {
               children: [
                 Row(
                   children: [
-                    Image.asset(
-                      IconConstants.backward,
-                      height: 15.86,
-                      width: 8.89,
-                      fit: BoxFit.contain,
+                    InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Image.asset(
+                        IconConstants.backward,
+                        height: 15.86,
+                        width: 8.89,
+                        fit: BoxFit.contain,
+                      ),
                     ),
                     SizedBox(width: 30.05,),
                     Text(StringConstant.privacyPolicyText,style: AppStyles.regularText(color:ColorConstants.bigStoneColor,fontSize:20,fontWeight: FontWeight.w500  ),),

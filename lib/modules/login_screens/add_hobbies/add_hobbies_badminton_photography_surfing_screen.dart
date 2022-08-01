@@ -6,14 +6,14 @@ import '../../../constants/string_constant.dart';
 import '../../../constants/style_constant.dart';
 import '../../../routes/route_generator.dart';
 
-class AddHobbies5 extends StatefulWidget {
-  const AddHobbies5({Key? key}) : super(key: key);
+class AddHobbiesBadmintonPhotographySurfing extends StatefulWidget {
+  const AddHobbiesBadmintonPhotographySurfing({Key? key}) : super(key: key);
 
   @override
-  State<AddHobbies5> createState() => _AddHobbies5State();
+  State<AddHobbiesBadmintonPhotographySurfing> createState() => _AddHobbiesBadmintonPhotographySurfingState();
 }
 
-class _AddHobbies5State extends State<AddHobbies5> {
+class _AddHobbiesBadmintonPhotographySurfingState extends State<AddHobbiesBadmintonPhotographySurfing> {
   int _selectedIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
@@ -89,20 +89,28 @@ class _AddHobbies5State extends State<AddHobbies5> {
                 );
               },
             ),
-              Container(
-                width: double.infinity,
-                padding: const EdgeInsets.symmetric(vertical: 17),
-                decoration: BoxDecoration(
-                    border: Border.all(
-                        color: ColorConstants.bayOfManyColor, width: 2),
-                    borderRadius: BorderRadius.circular(40)),
-                child: Text(
-                  StringConstant.addNewHobbyText,
-                  textAlign: TextAlign.center,
-                  style: AppStyles.boldText(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 16,
-                      color: ColorConstants.bayOfManyColor),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      RouteGenerator.generateRoute(
+                          const RouteSettings(name: '/addHobbies')));
+                },
+                child: Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.symmetric(vertical: 17),
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                          color: ColorConstants.bayOfManyColor, width: 2),
+                      borderRadius: BorderRadius.circular(40)),
+                  child: Text(
+                    StringConstant.addNewHobbyText,
+                    textAlign: TextAlign.center,
+                    style: AppStyles.boldText(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                        color: ColorConstants.bayOfManyColor),
+                  ),
                 ),
               ),
               const SizedBox(
@@ -110,7 +118,7 @@ class _AddHobbies5State extends State<AddHobbies5> {
               ),
               InkWell(
                 onTap: (){
-                  Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/addHobbies6')));
+                  Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/addHobbiesAddThreeHobbies')));
                 },
                 child: Container(
                   width: double.infinity,

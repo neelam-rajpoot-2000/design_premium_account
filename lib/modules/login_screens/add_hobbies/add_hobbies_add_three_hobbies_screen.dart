@@ -6,14 +6,14 @@ import '../../../constants/string_constant.dart';
 import '../../../constants/style_constant.dart';
 import '../../../routes/route_generator.dart';
 
-class AddHobbies3 extends StatefulWidget {
-  const AddHobbies3({Key? key}) : super(key: key);
+class AddHobbiesAddThreeHobbies extends StatefulWidget {
+  const AddHobbiesAddThreeHobbies({Key? key}) : super(key: key);
 
   @override
-  State<AddHobbies3> createState() => _AddHobbies3State();
+  State<AddHobbiesAddThreeHobbies> createState() => _AddHobbiesAddThreeHobbiesState();
 }
 
-class _AddHobbies3State extends State<AddHobbies3> {
+class _AddHobbiesAddThreeHobbiesState extends State<AddHobbiesAddThreeHobbies> {
   int _selectedIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
@@ -21,6 +21,17 @@ class _AddHobbies3State extends State<AddHobbies3> {
     });
   }
 
+  final List item = [
+    {
+      'title': StringConstant.badmintonText,
+    },
+    {
+      'title': StringConstant.photographyText,
+    },
+    {
+      'title': StringConstant.surfingText,
+    }
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -54,101 +65,26 @@ class _AddHobbies3State extends State<AddHobbies3> {
                   color: ColorConstants.bigStoneColor),
             )),
             const SizedBox(
-              height: 36,
-            ),
-            Center(
-                child: Text(
-              StringConstant.youHaveOneHobbyText,
-              style: AppStyles.regularText(
-                  color: ColorConstants.bigStoneColor, fontSize: 16),
-            )),
-            const SizedBox(
               height: 24,
             ),
-            Row(
-              children: [
-                Container(
-                  height: 32,
-                  width: 152,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    gradient: LinearGradient(colors: [
-                      ColorConstants.anakiwaColor,
-                      ColorConstants.malibu2Color,
-                    ]),
-                  ),
-                  child: Text(
-                    StringConstant.badmintonText,
-                    style: AppStyles.boldText(
-                        color: ColorConstants.bigStoneColor,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 16),
-                  ),
+            Expanded(
+              child: SizedBox(
+                height: double.infinity,
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  childAspectRatio: 3,
+                  children: List.generate(item.length, (index) {
+                    return _buildCardViewWidget(
+                      title: item[index]['title'],
+                    );
+                  }),
                 ),
-                const Spacer(),
-                InkWell(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Image.asset(
-                    IconConstants.pen,
-                    height: 24,
-                    width: 20,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                const SizedBox(
-                  width: 13.5,
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Image.asset(
-                    IconConstants.circleWithClose,
-                    height: 27,
-                    width: 27,
-                    fit: BoxFit.cover,
-                  ),
-                )
-              ],
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            Text(
-              StringConstant.intermediateText,
-              style: AppStyles.regularText(
-                  color: ColorConstants.bigStoneColor,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                  wordSpacing: 1),
-            ),
-            const Spacer(),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.symmetric(vertical: 17),
-              decoration: BoxDecoration(
-                  border: Border.all(
-                      color: ColorConstants.bayOfManyColor, width: 2),
-                  borderRadius: BorderRadius.circular(40)),
-              child: Text(
-                StringConstant.addNewHobbyText,
-                textAlign: TextAlign.center,
-                style: AppStyles.boldText(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 16,
-                    color: ColorConstants.bayOfManyColor),
               ),
             ),
-            const SizedBox(
-              height: 24,
-            ),
+            const Spacer(),
             InkWell(
               onTap: (){
-                Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/addHobbies4')));
+                Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/addHobbiesAddPhoto')));
               },
               child: Container(
                 width: double.infinity,
@@ -212,5 +148,44 @@ class _AddHobbies3State extends State<AddHobbies3> {
         ),
       ),
     ));
+  }
+
+  _buildCardViewWidget({
+    required String title,
+  }) {
+    return Column(
+      children: [
+        Container(
+          height: 32,
+          width: 152,
+          padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 4),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            gradient: LinearGradient(colors: [
+              ColorConstants.anakiwaColor,
+              ColorConstants.malibu2Color,
+            ]),
+          ),
+          child: Row(
+            children: [
+              Text(
+                title,
+                style: AppStyles.boldText(
+                    color: ColorConstants.bigStoneColor,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16),
+              ),
+              const Spacer(),
+              Image.asset(
+                IconConstants.circleWithClose,
+                height: 20,
+                width: 20,
+                fit: BoxFit.cover,
+              )
+            ],
+          ),
+        ),
+      ],
+    );
   }
 }

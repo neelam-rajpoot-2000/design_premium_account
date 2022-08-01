@@ -1,17 +1,20 @@
-import 'package:design_premium_account/modules/login_screens/add_hobbies/add_hobbies2_screen.dart';
-import 'package:design_premium_account/modules/login_screens/add_hobbies/add_hobbies3_screen.dart';
-import 'package:design_premium_account/modules/login_screens/add_hobbies/add_hobbies4_screen.dart';
-import 'package:design_premium_account/modules/login_screens/add_hobbies/add_hobbies5_screen.dart';
-import 'package:design_premium_account/modules/login_screens/add_hobbies/add_hobbies6_screen.dart';
-import 'package:design_premium_account/modules/login_screens/add_hobbies/add_hobbies7_screen.dart';
-import 'package:design_premium_account/modules/login_screens/add_hobbies/add_hobbies8_screen.dart';
+import 'package:design_premium_account/modules/login_screens/add_hobbies/add_hobbies_badminton_one_hobby_screen.dart';
+import 'package:design_premium_account/modules/login_screens/add_hobbies/add_hobbies_badminton_one_hobby_screen.dart';
+import 'package:design_premium_account/modules/login_screens/add_hobbies/add_hobbies_surfing_screen.dart';
+import 'package:design_premium_account/modules/login_screens/add_hobbies/add_hobbies_badminton_photography_surfing_screen.dart';
+import 'package:design_premium_account/modules/login_screens/add_hobbies/add_hobbies_add_three_hobbies_screen.dart';
+import 'package:design_premium_account/modules/login_screens/add_hobbies/add_hobbies_add_photos_screen.dart';
+import 'package:design_premium_account/modules/login_screens/add_hobbies/add_hobbies_add_photos_and_delete_also_screen.dart';
 import 'package:flutter/material.dart';
+import '../modules/login_screens/add_hobbies/add_hobbies_badminton_screen.dart';
 import '../modules/login_screens/add_hobbies/add_hobbies_screen.dart';
 import '../modules/login_screens/sign_in/facebook_google.dart';
 import '../modules/login_screens/sign_in/sign_in_screen.dart';
 import '../modules/login_screens/sign_up_about/sign_up_about_screen.dart';
-import '../modules/profile/add_hobbies_profile/add_hobbies_profile_screen.dart';
+import '../modules/profile/add_hobbies_profile/add_hobbies_my_hobbies_badminton.dart';
 import '../modules/profile/information/information_screen.dart';
+import '../modules/profile/privacy_policy/privacy_policy_screen.dart';
+import '../modules/profile/profile_settings/profile_settings_search_settings_screen.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -26,33 +29,33 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => const AddHobbies(),
         );
-      case '/addHobbies2':
+      case '/addHobbiesBadminton':
         return MaterialPageRoute(
-          builder: (_) => const AddHobbies2(),
+          builder: (_) => const AddHobbiesBadminton(),
         );
-      case '/addHobbies3':
+      case '/addHobbiesBadmintonOneHobby':
         return MaterialPageRoute(
-          builder: (_) => const AddHobbies3(),
+          builder: (_) => const AddHobbiesBadmintonOneHobby(),
         );
-      case '/addHobbies4':
+      case '/addHobbiesSurfing':
         return MaterialPageRoute(
-          builder: (_) => const AddHobbies4(),
+          builder: (_) => const AddHobbiesSurfing(),
         );
-      case '/addHobbies5':
+      case '/addHobbiesBadmintonPhotographySurfing':
         return MaterialPageRoute(
-          builder: (_) => const AddHobbies5(),
+          builder: (_) => const AddHobbiesBadmintonPhotographySurfing(),
         );
-      case '/addHobbies6':
+      case '/addHobbiesAddThreeHobbies':
         return MaterialPageRoute(
-          builder: (_) => const AddHobbies6(),
+          builder: (_) => const AddHobbiesAddThreeHobbies(),
         );
-      case '/addHobbies7':
+      case '/addHobbiesAddPhoto':
         return MaterialPageRoute(
-          builder: (_) => const AddHobbies7(),
+          builder: (_) => const AddHobbiesAddPhoto(),
         );
-      case '/addHobbies8':
+      case '/addHobbiesAddPhotoAndDelete':
         return MaterialPageRoute(
-          builder: (_) => const AddHobbies8(),
+          builder: (_) => const AddHobbiesAddPhotoAndDelete(),
         );
       case '/webViewScreen':
         return MaterialPageRoute(
@@ -69,10 +72,19 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => const Information(),
         );
-      case '/addHobbiesProfile':
+      case '/profileSettings':
         return MaterialPageRoute(
-          builder: (_) => const AddHobbiesProfile(),
+          builder: (_) => const ProfileSettings(),
         );
+      case '/privacyPolicy':
+        return MaterialPageRoute(
+          builder: (_) => const PrivancyPolicy(),
+        );
+      case '/myHobbiesBadminton':
+        return MaterialPageRoute(
+          builder: (_) => const MyHobbiesBadminton(),
+        );
+
 
       default:
         return _errorRoute();

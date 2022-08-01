@@ -33,74 +33,107 @@ class _ProfileMain1State extends State<ProfileMain1> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      body: Stack(
-        children: [
-          Image.asset(
-            ImageConstants.background1,
-            fit: BoxFit.cover,
-            width: double.infinity,
-          ),
-          Column(
+      body:
+          Stack(
             children: [
-              Row(
-                children: [
-                  Image.asset(
-                    IconConstants.backward,
-                    height: 15.86,
-                    width: 8.89,
-                    fit: BoxFit.contain,
-                    color: ColorConstants.mineShaftColor,
-                  ),
-                  Text(
-                    StringConstant.myProfileText,
-                    style: AppStyles.semiBoldText(
-                        color: ColorConstants.bigStoneColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  Image.asset(
-                    IconConstants.close,
-                    height: 24,
-                    width: 24,
-                    fit: BoxFit.contain,
-                    color: ColorConstants.bigStoneColor,
-                  ),
-                ],
+              Image.asset(
+                ImageConstants.background1,
+                fit: BoxFit.cover,
+                width: double.infinity,
               ),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: item.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return _buildCardViewWidget(
-                      index: index,
-                      title: item[index]['title'],
-                    );
-                  },
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 40.07, horizontal: 18.06),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Image.asset(
+                          IconConstants.backward,
+                          height: 15.86,
+                          width: 8.89,
+                          fit: BoxFit.contain,
+                          color: ColorConstants.mineShaftColor,
+                        ),
+                        SizedBox(
+                          width: 30.05,
+                        ),
+                        Text(
+                          StringConstant.myProfileText,
+                          style: AppStyles.semiBoldText(
+                              color: ColorConstants.bigStoneColor,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500),
+                        ),
+                        Spacer(),
+                        Image.asset(
+                          IconConstants.close,
+                          height: 24,
+                          width: 24,
+                          fit: BoxFit.contain,
+                          color: ColorConstants.bigStoneColor,
+                        ),
+                      ],
+                    ),
+                    Expanded(
+                      child: ListView.builder(
+                        padding: EdgeInsets.symmetric(vertical: 90),
+                        itemCount: item.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          return _buildCardViewWidget(
+                            index: index,
+                            title: item[index]['title'],
+                          );
+                        },
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
           ),
-        ],
-      ),
+         bottomNavigationBar:
+          Text(
+            StringConstant.logOutText,
+            textAlign: TextAlign.center,
+            style: AppStyles.regularText(
+                color: ColorConstants.bigStoneColor,
+                fontSize: 20,
+                fontWeight: FontWeight.w600,
+                isUnderline: true),
+          ),
+
     ));
   }
 
   _buildCardViewWidget({required String title, required index}) {
     return InkWell(
-      onTap: (){
-         if(index==0) {
-           Navigator.push(
-                 context,
-                 RouteGenerator.generateRoute(
-                     const RouteSettings(name: '/information')));
-         } else if(index==1) {
-           Navigator.push(
-                 context,
-                 RouteGenerator.generateRoute(
-                     const RouteSettings(name: '/addHobbiesProfile')));
-         }
+      onTap: () {
+        if (index == 0) {
+          Navigator.push(
+              context,
+              RouteGenerator.generateRoute(
+                  const RouteSettings(name: '/information')));
+        } else if (index == 1) {
+          Navigator.push(
+              context,
+              RouteGenerator.generateRoute(
+                  const RouteSettings(name: '/myHobbiesBadminton')));
+        } else if (index == 2) {
+          Navigator.push(
+              context,
+              RouteGenerator.generateRoute(
+                  const RouteSettings(name: '/profileSettings')));
+        } else if (index == 3) {
+          Navigator.push(
+              context,
+              RouteGenerator.generateRoute(
+                  const RouteSettings(name: '/privacyPolicy')));
+        }
       },
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             title,
@@ -109,9 +142,8 @@ class _ProfileMain1State extends State<ProfileMain1> {
                 fontWeight: FontWeight.w500,
                 color: ColorConstants.bigStoneColor),
           ),
-         const Spacer(),
           Container(
-            margin: const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(18),
             padding: const EdgeInsets.only(
                 left: 14.49, right: 14.5, top: 12.49, bottom: 12.5),
             decoration: BoxDecoration(

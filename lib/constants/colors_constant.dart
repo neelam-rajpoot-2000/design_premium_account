@@ -19,4 +19,7 @@ class ColorConstants{
   static Color DustyGrayColor= Color(0xFF999999);
   static Color persimmonColor = Color(0xFFFF5858);
   static Color blackColor =Color(0xFF000000);
+  static Color aquamarineColor= Color(0xFF58FFC3);
+  static Color persimmonColor1 = Color(0xFFFF5858);
+
 }
