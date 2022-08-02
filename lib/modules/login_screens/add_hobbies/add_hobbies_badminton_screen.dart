@@ -88,7 +88,7 @@ class _AddHobbiesBadmintonState extends State<AddHobbiesBadminton> {
                       fontWeight: FontWeight.w400),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 28,
               ),
               Row(
@@ -165,7 +165,7 @@ class _AddHobbiesBadmintonState extends State<AddHobbiesBadminton> {
                       letterSpacing: 0.5),
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               InkWell(
                 onTap: () {
                   Navigator.push(
@@ -176,7 +176,7 @@ class _AddHobbiesBadmintonState extends State<AddHobbiesBadminton> {
                 child: Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(vertical: 17),
-                    margin: EdgeInsets.symmetric(horizontal: 5),
+                    margin: const EdgeInsets.symmetric(horizontal: 5),
                     decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(

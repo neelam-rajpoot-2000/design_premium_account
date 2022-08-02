@@ -143,7 +143,7 @@ class _AddHobbiesMyHobbiesState extends State<AddHobbiesMyHobbies> {
               const Spacer(),
               Container(
                 width: double.infinity,
-                margin: EdgeInsets.symmetric(horizontal: 10),
+                margin: const EdgeInsets.symmetric(horizontal: 10),
                 padding: const EdgeInsets.symmetric(vertical: 17),
                 decoration: BoxDecoration(
                     border: Border.all(
@@ -163,7 +163,7 @@ class _AddHobbiesMyHobbiesState extends State<AddHobbiesMyHobbies> {
               ),
               Container(
                   width: double.infinity,
-                  margin: EdgeInsets.symmetric(horizontal: 15),
+                  margin: const EdgeInsets.symmetric(horizontal: 15),
                   padding: const EdgeInsets.symmetric(vertical: 17),
                   decoration: BoxDecoration(
                       boxShadow: [

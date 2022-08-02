@@ -12,6 +12,10 @@ class ImageConstants{
   static const backGd = '$base/backgd.png';
   static const business = '$base/business.png';
   static const army = '$base/army.png';
+  static const boy = '$base/boy.png';
+  static const boy1 = '$base/boy2.png';
+  static const boy3 = '$base/boy3.png';
+  static const girl = '$base/girl1.png';
 
 
 

@@ -65,7 +65,7 @@ class _EditHobbiesState extends State<EditHobbies> {
                           fontSize: 28,
                           fontWeight: FontWeight.w500,letterSpacing: 0.2),
                     )),
-                SizedBox(height: 29,),
+                const SizedBox(height: 29,),
                 Text(StringConstant.letText,style:AppStyles.regularText(color: ColorConstants.bigStoneColor,fontSize: 16,fontWeight: FontWeight.w400),),
                 const SizedBox(
                   height: 8,
@@ -125,7 +125,7 @@ class _EditHobbiesState extends State<EditHobbies> {
                     )
                   ],
                 ),
-                SizedBox(height: 40,),
+                const SizedBox(height: 40,),
                 Text(StringConstant.addDescriptionText,style: AppStyles.regularText(color: ColorConstants.bigStoneColor,fontWeight: FontWeight.w400,fontSize: 16),),
                 const SizedBox(
                   height: 8,
@@ -155,10 +155,10 @@ class _EditHobbiesState extends State<EditHobbies> {
                         letterSpacing: 0.5),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
                 Container(
                     width: double.infinity,
-                    margin: EdgeInsets.symmetric(horizontal: 10),
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
                     padding: const EdgeInsets.symmetric(vertical: 17),
                     decoration: BoxDecoration(
                         boxShadow: [

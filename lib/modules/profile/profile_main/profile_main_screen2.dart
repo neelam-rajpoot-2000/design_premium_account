@@ -56,7 +56,7 @@ class _ProfileMain1State extends State<ProfileMain1> {
                           fit: BoxFit.contain,
                           color: ColorConstants.mineShaftColor,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 30.05,
                         ),
                         Text(
@@ -66,7 +66,7 @@ class _ProfileMain1State extends State<ProfileMain1> {
                               fontSize: 20,
                               fontWeight: FontWeight.w500),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Image.asset(
                           IconConstants.close,
                           height: 24,
@@ -78,7 +78,7 @@ class _ProfileMain1State extends State<ProfileMain1> {
                     ),
                     Expanded(
                       child: ListView.builder(
-                        padding: EdgeInsets.symmetric(vertical: 90),
+                        padding: const EdgeInsets.symmetric(vertical: 90),
                         itemCount: item.length,
                         itemBuilder: (BuildContext context, int index) {
                           return _buildCardViewWidget(

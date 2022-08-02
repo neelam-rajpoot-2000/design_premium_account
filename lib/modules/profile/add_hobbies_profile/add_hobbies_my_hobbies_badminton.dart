@@ -101,11 +101,11 @@ class _MyHobbiesBadmintonState extends State<MyHobbiesBadminton> {
                   );
                 },
               ),
-              Spacer(),
+              const Spacer(),
               Container(
                 width: double.infinity,
                 padding: const EdgeInsets.symmetric(vertical: 17),
-                margin: EdgeInsets.symmetric(horizontal: 15),
+                margin: const EdgeInsets.symmetric(horizontal: 15),
                 decoration: BoxDecoration(
                     border: Border.all(
                         color: ColorConstants.bayOfManyColor, width: 2),

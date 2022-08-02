@@ -84,11 +84,11 @@ class _AddHobbiesGalleryState extends State<AddHobbiesGallery> {
                   },
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               Container(
                   width: double.infinity,
                   padding: const EdgeInsets.symmetric(vertical: 17),
-                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  margin: const EdgeInsets.symmetric(horizontal: 10),
                   decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(

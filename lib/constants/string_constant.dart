@@ -89,6 +89,20 @@ class StringConstant{
   static const String letText = "Let's discuss";
   static const String addDescriptionText = 'Add description';
   static const String galleryText = 'Gallery';
+  static const String tomText = 'Tom, 30';
+  static const String threekmAwayText = '3 km away';
+  static const String youGotText = 'YOU GOT 3 HOBBIES MATCHES!';
+  static const String noText = 'No specific niche yet just looking to make some photography friends';
+  static const String tomOtherText = "TOM'S OTHER HOBBIES";
+  static const String astronomyIsText = "Astronomy is the study of everything in the universe beyond Earth's atmosphere. That includes objects like the Sun , the Moon , the planets, and the stars.";
+  static const String alexText = 'Alex, 33';
+  static const String oneTwoKmAwayText = '1,2 km away';
+  static const String badmintonIsText = "Badminton is the study of everything in the universe beyond Earth's atmosphere. That includes objects like the Sun , the Moon , the planets, and the stars.";
+  static const String alexOtherText = "ALEX' S OTHER HOBBIES";
+  static const String buddeeText = 'Buddee';
+  static const String surfingIsText = "Surfing is the study of everything in the universe beyond Earth's atmosphere. That includes objects like the Sun , the Moon , the planets, and the stars.";
+
+
 
 
 

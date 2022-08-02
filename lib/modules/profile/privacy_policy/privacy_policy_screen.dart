@@ -18,13 +18,15 @@ class _PrivancyPolicyState extends State<PrivancyPolicy> {
       _selectedIndex = index;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 36,horizontal: 18.06),
+            padding:
+                const EdgeInsets.symmetric(vertical: 36, horizontal: 18.06),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -41,30 +43,76 @@ class _PrivancyPolicyState extends State<PrivancyPolicy> {
                         fit: BoxFit.contain,
                       ),
                     ),
-                    SizedBox(width: 30.05,),
-                    Text(StringConstant.privacyPolicyText,style: AppStyles.regularText(color:ColorConstants.bigStoneColor,fontSize:20,fontWeight: FontWeight.w500  ),),
-
+                    const SizedBox(
+                      width: 30.05,
+                    ),
+                    Text(
+                      StringConstant.privacyPolicyText,
+                      style: AppStyles.regularText(
+                          color: ColorConstants.bigStoneColor,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500),
+                    ),
                   ],
                 ),
-                SizedBox(height: 41,),
-                Text(StringConstant.effectiveText,style: AppStyles.regularText(color: ColorConstants.bigStoneColor,fontWeight: FontWeight.w400,fontSize: 16,wordSpacing: 4),),
-                SizedBox(height: 30,),
-                Text(StringConstant.viewText,style: AppStyles.regularText(color: ColorConstants.bigStoneColor,fontWeight: FontWeight.w400,fontSize: 16,wordSpacing: 4,),),
-                SizedBox(height: 30,),
-                Text(StringConstant.ourText,style: AppStyles.regularText(color: ColorConstants.bigStoneColor,fontWeight: FontWeight.w400,fontSize: 16,wordSpacing: 4,letterSpacing: 1.5),),
-                SizedBox(height: 30,),
-                Text(StringConstant.thisText,style: AppStyles.regularText(color: ColorConstants.bigStoneColor,fontWeight: FontWeight.w400,fontSize: 16,wordSpacing: 4,letterSpacing: 1.5),),
+                const SizedBox(
+                  height: 41,
+                ),
+                Text(
+                  StringConstant.effectiveText,
+                  style: AppStyles.regularText(
+                      color: ColorConstants.bigStoneColor,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16,
+                      wordSpacing: 4),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  StringConstant.viewText,
+                  style: AppStyles.regularText(
+                    color: ColorConstants.bigStoneColor,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 16,
+                    wordSpacing: 4,
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  StringConstant.ourText,
+                  style: AppStyles.regularText(
+                      color: ColorConstants.bigStoneColor,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16,
+                      wordSpacing: 4,
+                      letterSpacing: 1.5),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  StringConstant.thisText,
+                  style: AppStyles.regularText(
+                      color: ColorConstants.bigStoneColor,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 16,
+                      wordSpacing: 4,
+                      letterSpacing: 1.5),
+                ),
               ],
             ),
           ),
         ),
       ),
-      bottomNavigationBar:  SizedBox(
+      bottomNavigationBar: SizedBox(
         height: 70,
         child: BottomNavigationBar(
           showSelectedLabels: false,
           showUnselectedLabels: false,
-          items: [
+          items: const [
             BottomNavigationBarItem(
               icon: ImageIcon(
                 AssetImage(IconConstants.vector),
@@ -87,7 +135,7 @@ class _PrivancyPolicyState extends State<PrivancyPolicy> {
               label: 'Message',
             ),
             BottomNavigationBarItem(
-              icon:  ImageIcon(
+              icon: ImageIcon(
                 AssetImage(IconConstants.person),
                 size: 25,
               ),

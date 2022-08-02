@@ -217,7 +217,7 @@ class _InformationState extends State<Information> {
               Container(
                   height: 58,
                   width: double.infinity,
-                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  margin: const EdgeInsets.symmetric(horizontal: 10),
                   padding: const EdgeInsets.symmetric(vertical: 14),
                   decoration: BoxDecoration(
                       boxShadow: [

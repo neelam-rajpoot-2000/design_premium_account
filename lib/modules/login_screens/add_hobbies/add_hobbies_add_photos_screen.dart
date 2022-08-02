@@ -1,6 +1,6 @@
 import 'package:design_premium_account/constants/images_constant.dart';
 import 'package:flutter/material.dart';
-
+import 'package:image_picker/image_picker.dart';
 import '../../../constants/colors_constant.dart';
 import '../../../constants/icons_constant.dart';
 import '../../../constants/string_constant.dart';
@@ -15,38 +15,21 @@ class AddHobbiesAddPhoto extends StatefulWidget {
 }
 
 class _AddHobbiesAddPhotoState extends State<AddHobbiesAddPhoto> {
+  final ImagePicker _picker= ImagePicker();
   int _selectedIndex = 0;
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
-  final List item = [
-    {
-      'imageUrl1': ImageConstants.man1,
-      'icon1': IconConstants.right
-    },
-    {
-      'imageUrl1': ImageConstants.backGd,
-      'icon1': IconConstants.add
 
-    },
-    {
-      'imageUrl1': ImageConstants.backGd,
-      'icon1': IconConstants.add
-    },
-    {
-      'imageUrl1': ImageConstants.backGd,
-      'icon1': IconConstants.add
-    },
-    {
-      'imageUrl1': ImageConstants.backGd,
-      'icon1': IconConstants.add
-    },
-    {
-      'imageUrl1': ImageConstants.backGd,
-      'icon1': IconConstants.add
-    }
+  final List item = [
+    {'imageUrl1': ImageConstants.man1, 'icon1': IconConstants.right},
+    {'imageUrl1': ImageConstants.backGd, 'icon1': IconConstants.add},
+    {'imageUrl1': ImageConstants.backGd, 'icon1': IconConstants.add},
+    {'imageUrl1': ImageConstants.backGd, 'icon1': IconConstants.add},
+    {'imageUrl1': ImageConstants.backGd, 'icon1': IconConstants.add},
+    {'imageUrl1': ImageConstants.backGd, 'icon1': IconConstants.add}
   ];
   @override
   Widget build(BuildContext context) {
@@ -88,8 +71,7 @@ class _AddHobbiesAddPhotoState extends State<AddHobbiesAddPhoto> {
                 height: 400,
                 child: GridView.builder(
                   itemCount: item.length,
-                  gridDelegate:
-                      const SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
                     crossAxisSpacing: 8,
                     mainAxisSpacing: 8,
@@ -98,22 +80,24 @@ class _AddHobbiesAddPhotoState extends State<AddHobbiesAddPhoto> {
                   itemBuilder: (BuildContext context, int index) {
                     return _buildCardViewWidget(
                       index: index,
-                       icon1:  item[index]['icon1'],
+                      icon1: item[index]['icon1'],
                       imageUrl1: item[index]['imageUrl1'],
-
                     );
                   },
                 ),
               ),
               const Spacer(),
               InkWell(
-                onTap: (){
-                  Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/addHobbiesAddPhotoAndDelete')));
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      RouteGenerator.generateRoute(const RouteSettings(
+                          name: '/addHobbiesAddPhotoAndDelete')));
                 },
                 child: Container(
                     width: double.infinity,
                     padding: const EdgeInsets.symmetric(vertical: 17),
-                    margin: EdgeInsets.symmetric(horizontal: 10),
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
                     decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
@@ -182,26 +166,75 @@ class _AddHobbiesAddPhotoState extends State<AddHobbiesAddPhoto> {
     );
   }
 
-  _buildCardViewWidget({
-    required int index,
-    required String imageUrl1,
-    required String icon1
-  }) {
+  _buildCardViewWidget(
+      {required int index, required String imageUrl1, required String icon1}) {
     return Stack(
       children: [
         ClipRRect(
-          borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(12),
             child: Image.asset(
-          imageUrl1,
-          fit: BoxFit.contain,
-        )),
-          Positioned
-            (
+              imageUrl1,
+              fit: BoxFit.contain,
+            )),
+        Positioned(
             bottom: 18,
-              right: 2.5,
-              child:Image.asset(icon1,height: 22,width: 22,fit: BoxFit.contain,)
-          )
+            right: 2.5,
+            child: InkWell(
+              onTap: (){
+                showModalBottomSheet(context: context, builder:((builder)=> bottomSheet()));
+              },
+              child: Image.asset(
+                icon1,
+                height: 22,
+                width: 22,
+                fit: BoxFit.contain,
+              ),
+            ))
       ],
     );
   }
-}
+
+  Widget bottomSheet() {
+    return Container(
+      height: 100,
+      width: MediaQuery.of(context).size.width,
+      margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+      child: Column(
+        children: [
+          const Text(
+            'Choose profile photo',
+            style: TextStyle(fontSize: 20),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton.icon(
+                onPressed: () {
+                  takePhoto(ImageSource.camera);
+                },
+                icon: const Icon(Icons.camera),
+                label: const Text('Camera'),
+              ),
+              TextButton.icon(
+                onPressed: () {
+                  takePhoto(ImageSource.gallery);
+                },
+                icon: const Icon(Icons.image),
+                label: const Text('Gallery'),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  void takePhoto(ImageSource source) async{
+    final pickerFile =await _picker.pickImage(source: source);
+    setState((){
+    //  imageFile = pickerFile;
+    });
+  }}

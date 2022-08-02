@@ -98,7 +98,7 @@ class _AddHobbiesAddPhotoAndDeleteState
                   fontWeight: FontWeight.w500,letterSpacing: 0.8,
                   fontSize: 12),
             )),
-            SizedBox(height: 24,),
+            const SizedBox(height: 24,),
             SizedBox(
               height: 50,
               child: Center(
@@ -199,7 +199,7 @@ class _AddHobbiesAddPhotoAndDeleteState
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
                 color: index == 0
@@ -213,7 +213,7 @@ class _AddHobbiesAddPhotoAndDeleteState
                 width: 12,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 4,
             ),
             Text(

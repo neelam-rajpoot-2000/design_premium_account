@@ -6,7 +6,6 @@ import '../../../constants/colors_constant.dart';
 import '../../../constants/icons_constant.dart';
 import '../../../routes/route_generator.dart';
 
-
 class AddHobbies extends StatefulWidget {
   const AddHobbies({Key? key}) : super(key: key);
 
@@ -161,27 +160,27 @@ class _AddHobbiesState extends State<AddHobbies> {
                     fontWeight: FontWeight.w400),
               ),
               onTap: () {
-                if(_txtController.text.isEmpty){
+                if (_txtController.text.isEmpty) {
                   setState(() {
                     isSearchEnable = true;
                   });
                 }
               },
-              onChanged: (value){
+              onChanged: (value) {
                 print("valueCheck ${value.length}");
-                if(value.isEmpty){
+                if (value.isEmpty) {
                   _searchHistory.clear();
-                  setState(() {
-                  });
+                  setState(() {});
                 }
               },
-              onFieldSubmitted: (value){
+              onFieldSubmitted: (value) {
                 _searchHistory.clear();
                 item.forEach((pc) {
-                  if (pc['title'].contains(value)) _searchHistory.add(pc);
+                  if (pc['title'].contains(value)) {
+                    _searchHistory.add(pc);
+                  }
                 });
-                setState(() {
-                });
+                setState(() {});
               },
             ),
             const SizedBox(
@@ -261,10 +260,16 @@ class _AddHobbiesState extends State<AddHobbies> {
     return InkWell(
       onTap: index == 2
           ? () {
-        Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/addHobbiesBadminton')));
+              Navigator.push(
+                  context,
+                  RouteGenerator.generateRoute(
+                      const RouteSettings(name: '/addHobbiesBadminton')));
             }
           : () {
-        Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/addHobbies')));
+              Navigator.push(
+                  context,
+                  RouteGenerator.generateRoute(
+                      const RouteSettings(name: '/addHobbies')));
             },
       child: Column(
         children: [
@@ -290,4 +295,3 @@ class _AddHobbiesState extends State<AddHobbies> {
     );
   }
 }
-
