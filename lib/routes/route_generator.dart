@@ -5,6 +5,8 @@ import 'package:design_premium_account/modules/login_screens/add_hobbies/add_hob
 import 'package:design_premium_account/modules/login_screens/add_hobbies/add_hobbies_add_photos_screen.dart';
 import 'package:design_premium_account/modules/login_screens/add_hobbies/add_hobbies_add_photos_and_delete_also_screen.dart';
 import 'package:flutter/material.dart';
+import '../modules/checkout_options/abb_hobbies_pay.dart';
+import '../modules/checkout_options/add_hobbies_explore.dart';
 import '../modules/login_screens/add_hobbies/add_hobbies_badminton_screen.dart';
 import '../modules/login_screens/add_hobbies/add_hobbies_screen.dart';
 import '../modules/login_screens/sign_in/facebook_google.dart';
@@ -82,6 +84,14 @@ class RouteGenerator {
       case '/myHobbiesBadminton':
         return MaterialPageRoute(
           builder: (_) => const MyHobbiesBadminton(),
+        );
+      case '/pay':
+        return MaterialPageRoute(
+          builder: (_) => const Pay(),
+        );
+      case '/explore':
+        return MaterialPageRoute(
+          builder: (_) => const Explore(),
         );
 
 

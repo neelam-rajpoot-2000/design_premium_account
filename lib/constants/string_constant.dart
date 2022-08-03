@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class StringConstant{
   static const String helloText = 'Hello Again!';
   static const String signInAccountText = 'Sign in to your account';
@@ -101,6 +103,27 @@ class StringConstant{
   static const String alexOtherText = "ALEX' S OTHER HOBBIES";
   static const String buddeeText = 'Buddee';
   static const String surfingIsText = "Surfing is the study of everything in the universe beyond Earth's atmosphere. That includes objects like the Sun , the Moon , the planets, and the stars.";
+  static const String getPremiumText = 'Get premium';
+  static const String chooseYourPlanText = 'Choose your plan';
+  static const String dollarText = '\$20';
+  static const String premium1Text = 'PREMIUM';
+  static const String perMonthText = 'PER MONTH';
+  static const String saveUpText = 'Save Up to 30%';
+  static const String unlimitedLikesText = 'Unlimited likes';
+  static const String unlimitedHobbiesText = 'Unlimited hobbies listed';
+  static const String changeYourLocationText = 'Change your location (view profiles in another city)';
+  static const String seeProfilesText = 'See profiles that have ‘liked’ you';
+  static const String seeIfText = 'See if your messages have been read';
+  static const String choosePlanText = 'CHOOSE PLAN';
+  static const String cancelText = 'Cancel';
+  static const String vivaText = "VISA AVO INFINITE(••••1234)";
+  static const String payText = 'PAY GUACAMOLE S.R.O';
+  static const String dollar1Text = '\$99,99';
+  static const String confirmText = 'Confirm with Side Button';
+  static const String exploreText = 'Explore';
+  static const String congratulationsText = 'Congratulations!';
+  static const String goToText = 'GO TO BUDDEE';
+  static const String youAreText = 'You are now a premium account holder';
 
 
 

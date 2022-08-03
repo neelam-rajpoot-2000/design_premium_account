@@ -4,6 +4,7 @@ import 'package:design_premium_account/modules/profile/privacy_policy/privacy_po
 import 'package:design_premium_account/routes/route_generator.dart';
 import 'package:flutter/material.dart';
 
+import 'modules/checkout_options/abb_hobbies_get_permium.dart';
 import 'modules/explore/explore_screens/explore_screen.dart';
 import 'modules/login_screens/add_hobbies/add_hobbies_badminton_one_hobby_screen.dart';
 import 'modules/login_screens/add_hobbies/add_hobbies_badminton_screen.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ExploreScreen(),
+      home: GetPermium(),
       onGenerateRoute: RouteGenerator.generateRoute,
     );
   }

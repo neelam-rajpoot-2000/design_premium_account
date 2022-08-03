@@ -76,7 +76,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                               fontSize: 28,
                               fontWeight: FontWeight.w500),
                         ),
-                        Spacer(),
+                        const Spacer(),
                         Image.asset(
                           IconConstants.lines,
                           height: 24.42,
@@ -85,7 +85,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 23,
                     ),
                     CarouselSlider(
@@ -109,7 +109,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                                 borderRadius: BorderRadius.circular(30.0),
                               ),
                               child: ClipRRect(
-                                borderRadius: BorderRadius.all(
+                                borderRadius: const BorderRadius.all(
                                   Radius.circular(30.0),
                                 ),
                                 child: Image.asset(
@@ -122,7 +122,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                           )
                           .toList(),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 24,
                     ),
                     Row(
@@ -137,7 +137,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         ),
                         Container(
                           padding:
-                              EdgeInsets.symmetric(vertical: 5, horizontal: 12),
+                              const EdgeInsets.symmetric(vertical: 5, horizontal: 12),
                           decoration: BoxDecoration(
                             gradient: LinearGradient(colors: [
                               ColorConstants.sunshadeColor,
@@ -154,7 +154,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                                 width: 16,
                                 fit: BoxFit.cover,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 6,
                               ),
                               Text(
@@ -169,7 +169,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 14,
                     ),
                     SizedBox(
@@ -186,7 +186,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         },
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 24,
                     ),
                     SizedBox(
@@ -211,7 +211,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                                     borderRadius: BorderRadius.circular(30.0),
                                   ),
                                   child: Container(
-                                    padding: EdgeInsets.all(16),
+                                    padding: const EdgeInsets.all(16),
                                     decoration: BoxDecoration(
                                         color: ColorConstants.bubblesColor,
                                         border: Border.all(
@@ -230,7 +230,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                                               fontWeight: FontWeight.w600,
                                               fontSize: 16),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 16,
                                         ),
                                         Text(
@@ -248,11 +248,11 @@ class _ExploreScreenState extends State<ExploreScreen> {
                             .toList(),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 16,
                     ),
                     Center(child: buildIndicator1()),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Text(
@@ -262,7 +262,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                           fontWeight: FontWeight.w600,
                           fontSize: 15),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 13,
                     ),
                     SizedBox(
@@ -279,7 +279,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         },
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 24,
                     ),
                   ],
@@ -304,11 +304,11 @@ class _ExploreScreenState extends State<ExploreScreen> {
                               fontWeight: FontWeight.w600,
                               fontSize: 26),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 11,
                         ),
                         Container(
-                            padding: EdgeInsets.symmetric(
+                            padding: const EdgeInsets.symmetric(
                                 horizontal: 13, vertical: 7),
                             decoration: BoxDecoration(
                                 gradient: LinearGradient(colors: [
@@ -332,7 +332,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                           width: 13,
                           color: ColorConstants.whiteColor,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 8,
                         ),
                         Text(
@@ -359,7 +359,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         shape: BoxShape.circle,
                         color: ColorConstants.persimmonColor,
                       ),
-                      padding: EdgeInsets.all(18),
+                      padding: const EdgeInsets.all(18),
                       child: Image.asset(
                         IconConstants.close,
                         height: 14,
@@ -368,7 +368,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 100,
                     ),
                     Container(
@@ -376,7 +376,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         shape: BoxShape.circle,
                         color: ColorConstants.aquamarineColor,
                       ),
-                      padding: EdgeInsets.all(18),
+                      padding: const EdgeInsets.all(18),
                       child: Image.asset(
                         IconConstants.ryt,
                         height: 10.31,
@@ -397,7 +397,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
 
   _buildCardViewWidget({required String title, required index}) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 6),
+      margin: const EdgeInsets.symmetric(horizontal: 6),
       padding: const EdgeInsets.symmetric(horizontal: 17, vertical: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
@@ -422,7 +422,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
           borderRadius: BorderRadius.circular(30.0),
         ),
         child: Container(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
               color: ColorConstants.bubblesColor,
               border: Border.all(color: ColorConstants.anakiwaColor, width: 1),
@@ -437,7 +437,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     fontWeight: FontWeight.w600,
                     fontSize: 16),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 16,
               ),
               Text(
@@ -454,7 +454,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
 
   _buildCardViewWidget1({required String title, required index}) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 6),
+      margin: const EdgeInsets.symmetric(horizontal: 6),
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),

@@ -24,5 +24,9 @@ class ColorConstants{
   static Color silverChaliceColor =Color(0xFFAEAEAE);
   static Color icebergColor =Color(0xFFD5F2F4);
   static Color bubblesColor =Color(0xFFE7FBFF);
-  //static Color anakiwaColor =Color(0xFF94BDFF);
+  static Color mercuryColor =Color(0xFFE5E5E5);
+  static Color biscayColor =Color(0xFF1D396B);
+  static Color blueColor =Color(0xFF3593A5);
+  static Color redColor =Color(0xFFFF4040);
+  static Color athensGrayColor =Color(0xFFE5E5EA);
 }

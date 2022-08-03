@@ -21,6 +21,9 @@ class IconConstants{
   static const lines = '$base/lines.png';
   static const direction = '$base/direction.png';
   static const diamond1 = '$base/diamond1.png';
+  static const pay = '$base/Pay.png';
+  static const img = '$base/img.png';
+  static const  forward1= '$base/Icon.png';
 
 
 }

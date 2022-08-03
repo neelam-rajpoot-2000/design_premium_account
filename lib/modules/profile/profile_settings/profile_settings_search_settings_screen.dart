@@ -13,7 +13,8 @@ class ProfileSettings extends StatefulWidget {
 }
 
 class _ProfileSettingsState extends State<ProfileSettings> {
-  int _value = 6;
+  double _currentSliderValue1 = 10;
+  RangeValues values1 = RangeValues(10,50);
   RangeValues _currentRangeValues = const RangeValues(20, 60);
   int _selectedIndex = 0;
   void _onItemTapped(int index) {
@@ -195,21 +196,20 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                           ],
                         ),
                         Slider(
-                            value: _value.toDouble(),
+                            value: _currentSliderValue1,
                             min: 1.0,
-                            max: 20.0,
+                            max: 50.0,
                             divisions: 10,
                             activeColor: ColorConstants.malibu2Color,
                             inactiveColor: ColorConstants.alto,
-                            label: 'Distance',
-                            onChanged: (double newValue) {
+                            label: _currentSliderValue1.round().toString(),
+                            onChanged: (double value) {
                               setState(() {
-                                _value = newValue.round();
+                                _currentSliderValue1 = value;
                               });
                             },
-                            semanticFormatterCallback: (double newValue) {
-                              return '${newValue.round()} dollars';
-                            }),
+
+                            ),
                       ],
                     )),
                 Container(
@@ -325,10 +325,9 @@ class _ProfileSettingsState extends State<ProfileSettings> {
                   height: 24,
                 ),
                 Container(
-                    height: 58,
                     width: double.infinity,
                     margin: const EdgeInsets.symmetric(horizontal: 10),
-                    padding: const EdgeInsets.symmetric(vertical: 14),
+                    padding: const EdgeInsets.symmetric(vertical: 18),
                     decoration: BoxDecoration(
                         boxShadow: [
                           BoxShadow(
