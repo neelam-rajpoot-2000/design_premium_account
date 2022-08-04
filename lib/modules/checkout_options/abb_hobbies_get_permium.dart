@@ -72,7 +72,7 @@ class _GetPermiumState extends State<GetPermium> {
                             fontWeight: FontWeight.w500),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 4,
                     ),
                     Center(
@@ -83,20 +83,20 @@ class _GetPermiumState extends State<GetPermium> {
                           fontSize: 16,
                           fontWeight: FontWeight.w400),
                     )),
-                    SizedBox(
+                    const SizedBox(
                       height: 16,
                     ),
                     Center(
                       child: Container(
                         width: double.infinity,
-                        padding: EdgeInsets.symmetric(vertical: 29),
+                        padding: const EdgeInsets.symmetric(vertical: 29),
                         decoration: BoxDecoration(
                           gradient: LinearGradient(colors: [
                             ColorConstants.anakiwaColor,
                             ColorConstants.malibu2Color,
                           ]),
-                          borderRadius: BorderRadius.only(
-                            topRight: Radius.circular(12.0),
+                          borderRadius: const BorderRadius.only(
+                            topRight:Radius.circular(12.0),
                             topLeft: Radius.circular(12.0),
                           ),
                         ),
@@ -110,7 +110,7 @@ class _GetPermiumState extends State<GetPermium> {
                                   fontWeight: FontWeight.w800,
                                   fontSize: 20),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 16,
                             ),
                             Text(
@@ -126,10 +126,10 @@ class _GetPermiumState extends State<GetPermium> {
                     ),
                     Container(
                       width: double.infinity,
-                      padding: EdgeInsets.symmetric(vertical: 35),
+                      padding: const EdgeInsets.symmetric(vertical: 35),
                       decoration: BoxDecoration(
                         color: ColorConstants.whiteColor,
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           bottomRight: Radius.circular(12.0),
                           bottomLeft: Radius.circular(12.0),
                         ),
@@ -144,7 +144,7 @@ class _GetPermiumState extends State<GetPermium> {
                                 fontWeight: FontWeight.w500,
                                 fontSize: 32),
                           ),
-                          SizedBox(height: 10,),
+                          const SizedBox(height: 10,),
                           SizedBox(
                             height: 280,
                             child: ListView.builder(
@@ -160,7 +160,7 @@ class _GetPermiumState extends State<GetPermium> {
                         ],
                       ),
                     ),
-                    SizedBox(height: 50,),
+                    const SizedBox(height: 50,),
                     InkWell(
                       onTap: () {
                         Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/pay')));
@@ -196,7 +196,7 @@ class _GetPermiumState extends State<GetPermium> {
                   top: 250,
                   left: 133,
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 30, vertical: 18),
+                    padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 18),
                     decoration: BoxDecoration(
                         color: ColorConstants.whiteColor,
                         borderRadius: BorderRadius.circular(22)),

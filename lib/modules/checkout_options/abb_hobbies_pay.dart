@@ -53,7 +53,7 @@ class _PayState extends State<Pay> {
                 color: ColorConstants.hitGrayColor,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Center(
@@ -65,7 +65,7 @@ class _PayState extends State<Pay> {
                     fontWeight: FontWeight.w500),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             ListView.builder(
@@ -77,7 +77,7 @@ class _PayState extends State<Pay> {
                 );
               },
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Center(
@@ -106,8 +106,8 @@ class _PayState extends State<Pay> {
     return Row(
       children: [
         Container(
-            margin: EdgeInsets.all(10),
-            padding: EdgeInsets.all(8),
+            margin: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
                   ColorConstants.sunshadeColor,
@@ -137,7 +137,8 @@ class _PayState extends State<Pay> {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext bc) {
-          return Padding(
+          return Container(
+            height: MediaQuery.of(context).size.height * 0.45,
             padding: const EdgeInsets.all(16),
             child: Column(
               children: [
@@ -158,19 +159,19 @@ class _PayState extends State<Pay> {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 Divider(
                   color: ColorConstants.athensGrayColor,
                   thickness: 1,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 Row(
                   children: [
-                    SizedBox(width:40 ,),
+                    const SizedBox(width:40 ,),
                     Image.asset(
                       ImageConstants.cards,
                       height: 60,
@@ -185,7 +186,7 @@ class _PayState extends State<Pay> {
                           fontWeight: FontWeight.w500,
                           letterSpacing: -0.2),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Image.asset(
                       IconConstants.forward1,
                       height: 20,
@@ -199,18 +200,18 @@ class _PayState extends State<Pay> {
                   color: ColorConstants.athensGrayColor,
                   thickness: 1,
                 ),
-                SizedBox(
-                  height: 25,
+                const SizedBox(
+                  height: 16,
                 ),
                 Row(
                   children: [
-                    SizedBox(width: 100,),
+                    const SizedBox(width: 100,),
                     Text(StringConstant.payText,
                       style: AppStyles.boldText(
                         color: ColorConstants.blackColor,
                         fontSize: 14,
                         fontWeight: FontWeight.w500,),),
-                    Spacer(),
+                    const Spacer(),
                     Text(StringConstant.dollar1Text,
                       style: AppStyles.boldText(
                         color: ColorConstants.blackColor,
@@ -218,8 +219,8 @@ class _PayState extends State<Pay> {
                         fontWeight: FontWeight.w600,),),
                   ],
                 ),
-                SizedBox(
-                  height: 25,
+                const SizedBox(
+                  height: 16,
                 ),
                 Divider(
                   color: ColorConstants.athensGrayColor,
@@ -229,7 +230,8 @@ class _PayState extends State<Pay> {
                     onTap: () {
                       Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/explore')));
                     },
-                    child: Image.asset(IconConstants.img,height: 80,width: 80,)),
+                    child: Image.asset(IconConstants.img,)),
+                const SizedBox(height: 4,),
                 Text(StringConstant.confirmText, style: AppStyles.boldText(
                   color: ColorConstants.blackColor,
                   fontSize: 16,

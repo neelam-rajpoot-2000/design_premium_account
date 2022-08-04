@@ -68,6 +68,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           StringConstant.buddeeText,
@@ -76,7 +77,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
                               fontSize: 28,
                               fontWeight: FontWeight.w500),
                         ),
-                        const Spacer(),
                         Image.asset(
                           IconConstants.lines,
                           height: 24.42,

@@ -123,10 +123,12 @@ class StringConstant{
   static const String exploreText = 'Explore';
   static const String congratulationsText = 'Congratulations!';
   static const String goToText = 'GO TO BUDDEE';
-  static const String youAreText = 'You are now a premium account holder';
-
-
-
-
-
+  static const String youAreText = 'You are now a premium';
+  static const String accountText = 'account holder';
+  static const String likedYouText = 'Liked you';
+  static const String allText = 'All';
+  static const String annText = 'Ann, 21';
+  static const String ingaText = 'Inga, 24';
+  static const String jesText = 'Jes, 28';
+  static const String jeannyText = 'Jeanny, 20';
 }

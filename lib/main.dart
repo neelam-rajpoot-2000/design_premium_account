@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import 'modules/checkout_options/abb_hobbies_get_permium.dart';
 import 'modules/explore/explore_screens/explore_screen.dart';
+import 'modules/likes_in_premium/app_hobbies_explore_liked_you.dart';
 import 'modules/login_screens/add_hobbies/add_hobbies_badminton_one_hobby_screen.dart';
 import 'modules/login_screens/add_hobbies/add_hobbies_badminton_screen.dart';
 import 'modules/login_screens/add_hobbies/add_hobbies_surfing_screen.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: GetPermium(),
+      home: AddHobbiesExploreLikedYou(),
       onGenerateRoute: RouteGenerator.generateRoute,
     );
   }

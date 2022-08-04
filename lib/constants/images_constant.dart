@@ -18,6 +18,7 @@ class ImageConstants{
   static const girl = '$base/girl1.png';
   static const cards = '$base/cards.png';
   static const photo = '$base/photo.png';
+  static const back = '$base/back.png';
 
 
 
