@@ -4,6 +4,7 @@ import 'package:design_premium_account/constants/images_constant.dart';
 import 'package:design_premium_account/constants/string_constant.dart';
 import 'package:design_premium_account/constants/style_constant.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 
 import '../../../routes/route_generator.dart';
 
@@ -15,6 +16,10 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+  firebase_auth.FirebaseAuth firebaseAuth =firebase_auth.FirebaseAuth.instance;
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  bool circular= false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,11 +80,12 @@ class _SignInState extends State<SignIn> {
                   height: 8,
                 ),
                 TextFormField(
+                  controller: _emailController,
                   keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                     contentPadding:
                     const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                    border: OutlineInputBorder(
+                    focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.0),
                       borderSide: BorderSide(
                         width: 1,
@@ -107,12 +113,13 @@ class _SignInState extends State<SignIn> {
                   height: 8,
                 ),
                 TextFormField(
+                  controller: _passwordController,
                   obscureText: true,
                   keyboardType: TextInputType.visiblePassword,
                   decoration: InputDecoration(
                     contentPadding:
                     const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                    border: OutlineInputBorder(
+                    focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12.0),
                       borderSide: BorderSide(
                         width: 1,
@@ -145,27 +152,49 @@ class _SignInState extends State<SignIn> {
                 const SizedBox(
                   height: 24,
                 ),
-                Container(
-                    height: 58,
-                    width: double.infinity,
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                    decoration: BoxDecoration(
-                        boxShadow: [BoxShadow(
-                          color: ColorConstants.yellowOrangeColor,
-                          blurRadius: 10.0,
-                          offset: const Offset(0.0,  2),
-                        ),],
-                        gradient: LinearGradient(colors: [
-                          ColorConstants.sunshadeColor,
-                          ColorConstants.orangeColor,
-                        ]),
-                        borderRadius: BorderRadius.circular(40)),
-                    child: Text(StringConstant.signInText,
-                        textAlign: TextAlign.center,
-                        style: AppStyles.boldText(
-                            fontSize: 20,
-                            color: ColorConstants.whiteColor,
-                            fontWeight: FontWeight.w600))),
+                InkWell(
+                  onTap: () async{
+                    try{
+                      firebase_auth.UserCredential userCredentials = await firebaseAuth.signInWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
+                      print(userCredentials.user?.email);
+                      setState((){
+                        circular=false;
+                      });
+                       Navigator.push(
+                          context,
+                          RouteGenerator.generateRoute(
+                              const RouteSettings(name: '/signUpAbout')));
+                    }
+                        catch(e){
+                          final snackbar =SnackBar(content: Text(e.toString()));
+                          ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                          setState((){
+                            circular=false;
+                          });
+                        }
+                  },
+                  child: Container(
+                      height: 58,
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                      decoration: BoxDecoration(
+                          boxShadow: [BoxShadow(
+                            color: ColorConstants.yellowOrangeColor,
+                            blurRadius: 10.0,
+                            offset: const Offset(0.0,  2),
+                          ),],
+                          gradient: LinearGradient(colors: [
+                            ColorConstants.sunshadeColor,
+                            ColorConstants.orangeColor,
+                          ]),
+                          borderRadius: BorderRadius.circular(40)),
+                      child: Text(StringConstant.signInText,
+                          textAlign: TextAlign.center,
+                          style: AppStyles.boldText(
+                              fontSize: 20,
+                              color: ColorConstants.whiteColor,
+                              fontWeight: FontWeight.w600))),
+                ),
                 const SizedBox(
                   height: 29,
                 ),
@@ -220,6 +249,7 @@ class _SignInState extends State<SignIn> {
                           const SizedBox(
                             width: 10,
                           ),
+                          circular?const CircularProgressIndicator(value: 2,):
                           Text(StringConstant.signInGoggleText,
                               style: AppStyles.semiBoldText(
                                   fontSize: 16,
@@ -279,13 +309,29 @@ class _SignInState extends State<SignIn> {
                       width: 4,
                     ),
                     InkWell(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            RouteGenerator.generateRoute(
-                                const RouteSettings(name: '/signUpAbout')));
+                      onTap: () async{
+                       setState((){
+                         circular=true;
+                       });
+                        try{
+                          firebase_auth.UserCredential userCredential= await firebaseAuth.createUserWithEmailAndPassword(email: _emailController.text.trim(), password: _passwordController.text.trim());
+                          print(userCredential.user?.email);
+                          setState((){
+                            circular=false;
+                          });
+                          Navigator.push(
+                              context,
+                              RouteGenerator.generateRoute(
+                                  const RouteSettings(name: '/signUpAbout')));
+                        }catch(e){
+                          final snackbar =SnackBar(content: Text(e.toString()));
+                          ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                          setState((){
+                            circular=false;
+                          });
+                        }
                       },
-                      child: Text(
+                      child:circular?const CircularProgressIndicator(): Text(
                         StringConstant.signUpText,
                         style: AppStyles.regularText(
                             color: ColorConstants.malibuColor,
