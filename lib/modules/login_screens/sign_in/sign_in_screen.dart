@@ -3,8 +3,9 @@ import 'package:design_premium_account/constants/icons_constant.dart';
 import 'package:design_premium_account/constants/images_constant.dart';
 import 'package:design_premium_account/constants/string_constant.dart';
 import 'package:design_premium_account/constants/style_constant.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
+import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../../routes/route_generator.dart';
 
@@ -16,7 +17,7 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  firebase_auth.FirebaseAuth firebaseAuth =firebase_auth.FirebaseAuth.instance;
+  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool circular= false;
@@ -155,15 +156,16 @@ class _SignInState extends State<SignIn> {
                 InkWell(
                   onTap: () async{
                     try{
-                      firebase_auth.UserCredential userCredentials = await firebaseAuth.signInWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
+                      print('credentials:${_emailController.text},${_passwordController.text}');
+                      UserCredential userCredentials = await firebaseAuth.signInWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
                       print(userCredentials.user?.email);
                       setState((){
                         circular=false;
                       });
-                       Navigator.push(
-                          context,
-                          RouteGenerator.generateRoute(
-                              const RouteSettings(name: '/signUpAbout')));
+                       // Navigator.push(
+                       //    context,
+                       //    RouteGenerator.generateRoute(
+                       //        const RouteSettings(name: '/signUpAbout')));
                     }
                         catch(e){
                           final snackbar =SnackBar(content: Text(e.toString()));
@@ -228,7 +230,7 @@ class _SignInState extends State<SignIn> {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, RouteGenerator.generateRoute(const RouteSettings(name: '/webViewScreen')));
+                    signup(context);
                   },
                   child: Container(
                       width: double.infinity,
@@ -314,7 +316,7 @@ class _SignInState extends State<SignIn> {
                          circular=true;
                        });
                         try{
-                          firebase_auth.UserCredential userCredential= await firebaseAuth.createUserWithEmailAndPassword(email: _emailController.text.trim(), password: _passwordController.text.trim());
+                          UserCredential userCredential= await firebaseAuth.createUserWithEmailAndPassword(email: _emailController.text.trim(), password: _passwordController.text.trim());
                           print(userCredential.user?.email);
                           setState((){
                             circular=false;
@@ -348,5 +350,28 @@ class _SignInState extends State<SignIn> {
         ),
       ),
     );
+  }
+  final FirebaseAuth auth = FirebaseAuth.instance;
+
+  Future<void> signup(BuildContext context) async {
+    final GoogleSignIn googleSignIn = GoogleSignIn();
+    final GoogleSignInAccount? googleSignInAccount = await googleSignIn.signIn();
+    if (googleSignInAccount != null) {
+      final GoogleSignInAuthentication googleSignInAuthentication =
+      await googleSignInAccount.authentication;
+      final AuthCredential authCredential = GoogleAuthProvider.credential(
+          idToken: googleSignInAuthentication.idToken,
+          accessToken: googleSignInAuthentication.accessToken);
+
+      // Getting users credential
+      UserCredential result = await auth.signInWithCredential(authCredential);
+      User? user = result.user;
+      print('Signup successfully:${user?.displayName}');
+
+        // Navigator.pushReplacement(
+        //     context, MaterialPageRoute(builder: (context) => HomePage()));
+        // if result not null we simply call the MaterialpageRoute,
+        // for go to the HomePage screen
+    }
   }
 }

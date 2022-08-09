@@ -3,7 +3,7 @@ class ImageConstants{
   static const bubble = '$base/bubble.png';
   static const facebook = '$base/facebook1.png';
   static const google = '$base/google.svg';
-  static const background = '$base/img.png';
+  static const background = '$base/immg.png';
   static const bubbee = '$base/bubble.png';
   static const background1 = '$base/background.png';
   static const man = '$base/man.png';
